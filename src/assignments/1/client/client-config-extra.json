@@ -1,0 +1,3155 @@
+{
+  "serverUrl": "localhost:8080",
+  "messages": [
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    },
+    {
+      "name": "Same length strings 1",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,4321"
+    },
+    {
+      "name": "Same length strings 2",
+      "action": "SAME_LENGTH_STRING",
+      "payload": "casa,masa,trei,tanc,43210"
+    },
+    {
+      "name": "Extract perfect squares",
+      "action": "EXTRACT_PERFECT_SQUARES",
+      "payload": "abd4g5,1sdf6fd,fd2fds5"
+    },
+    {
+      "name": "Integer sum 1",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14"
+    },
+    {
+      "name": "Integer sum 2",
+      "action": "REVERSED_INTEGER_SUM",
+      "payload": "12,13,14d"
+    },
+    {
+      "name": "Digit sum in range 1",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,5,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 2",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10,6,11,39,32,80,84"
+    },
+    {
+      "name": "Digit sum in range 3",
+      "action": "DIGIT_SUM_IN_RANGE",
+      "payload": "2,10a,6,11,39,32,80,84"
+    },
+    {
+      "name": "Convert binary to decimal",
+      "action": "CONVERT_BINARY_TO_DECIMAL",
+      "payload": "2dasdas,12,dasdas,1010,101"
+    }
+  ]
+}
