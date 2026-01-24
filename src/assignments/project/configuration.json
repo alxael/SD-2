@@ -1,0 +1,28 @@
+{
+  "settings": {
+    "refreshTimeMs": 100,
+    "requestTimeoutMs": 150,
+    "maxDeviationsMs": 10
+  },
+  "master": {
+    "id": "MasterNode",
+    "currentTimeMs": 1900000123456,
+    "httpServerPort": 8080
+  },
+  "slaves": [
+    {
+      "id": "SlaveNode-1",
+      "currentTimeMs": 1900000123000,
+      "httpServerPort": 8081,
+      "sendDelayMs": 10,
+      "receiveDelayMs": 10
+    },
+    {
+      "id": "SlaveNode-2",
+      "currentTimeMs": 1900000123400,
+      "httpServerPort": 8082,
+      "sendDelayMs": 10,
+      "receiveDelayMs": 10
+    }
+  ]
+}
