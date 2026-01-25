@@ -1,7 +1,7 @@
 {
   "settings": {
-    "refreshTimeMs": 25,
-    "requestTimeoutMs": 20,
+    "refreshTimeMs": 10000,
+    "requestTimeoutMs": 150,
     "maxDeviationsMs": 100
   },
   "master": {
@@ -14,43 +14,43 @@
       "id": "SlaveNode-1",
       "currentTimeMs": 1900000123000,
       "httpServerPort": 8081,
-      "sendDelayMs": 0,
-      "receiveDelayMs": 0
+      "sendDelayMs": 100,
+      "receiveDelayMs": 100
     },
     {
       "id": "SlaveNode-2",
       "currentTimeMs": 1900000123400,
       "httpServerPort": 8082,
-      "sendDelayMs": 0,
-      "receiveDelayMs": 0
+      "sendDelayMs": 100,
+      "receiveDelayMs": 100
     },
     {
       "id": "SlaveNode-3",
       "currentTimeMs": 1900000123000,
       "httpServerPort": 8083,
-      "sendDelayMs": 0,
-      "receiveDelayMs": 0
+      "sendDelayMs": 100,
+      "receiveDelayMs": 100
     },
     {
       "id": "SlaveNode-4",
       "currentTimeMs": 1900000123400,
       "httpServerPort": 8084,
-      "sendDelayMs": 0,
-      "receiveDelayMs": 0
+      "sendDelayMs": 100,
+      "receiveDelayMs": 100
     },
     {
       "id": "SlaveNode-5",
       "currentTimeMs": 1900000123000,
       "httpServerPort": 8085,
-      "sendDelayMs": 0,
-      "receiveDelayMs": 0
+      "sendDelayMs": 100,
+      "receiveDelayMs": 100
     },
     {
       "id": "SlaveNode-6",
       "currentTimeMs": 1900000123400,
       "httpServerPort": 8086,
-      "sendDelayMs": 0,
-      "receiveDelayMs": 0
+      "sendDelayMs": 100,
+      "receiveDelayMs": 100
     }
   ]
 }

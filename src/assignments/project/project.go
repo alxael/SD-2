@@ -1,10 +1,11 @@
 package main
 
 import (
+	"encoding/csv"
 	"encoding/json"
 	"fmt"
 	"io"
-	"log" // Added for random drift simulation
+	"log"
 	"net"
 	"net/http"
 	"os"
@@ -16,11 +17,12 @@ import (
 
 // Global configurations
 
-var logIntervals = 5000
+var logIntervalMs = 100
 var logFileBasePath = "../src/assignments/project/logs"
+var syncLogFilePath = "../src/assignments/project/logs/synchronization.csv"
 var configurationPath = "../src/assignments/project/configuration.json"
 
-// Helper for formatting time (Global)
+// Helper for formatting time
 func FormatTime(milliseconds int64) string {
 	return time.Unix(milliseconds/1e3, (milliseconds%1e3)*1e6).Format("2006-01-02 15:04:05.000")
 }
@@ -146,7 +148,7 @@ func StartTimeLogger(nodeId string, clock *Clock) {
 		}
 		defer file.Close()
 
-		refreshDuration := time.Duration(logIntervals) * time.Millisecond
+		refreshDuration := time.Duration(logIntervalMs) * time.Millisecond
 
 		ticker := time.NewTicker(refreshDuration)
 		defer ticker.Stop()
@@ -165,7 +167,79 @@ func StartTimeLogger(nodeId string, clock *Clock) {
 	}()
 }
 
+func InitializeSyncLogger(slaves []SlaveConfiguration) {
+	_ = os.MkdirAll(logFileBasePath, 0755)
+	file, err := os.OpenFile(syncLogFilePath, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0666)
+	if err != nil {
+		log.Fatalf("Failed to create sync log file: %v", err)
+	}
+	defer file.Close()
+
+	writer := csv.NewWriter(file)
+	defer writer.Flush()
+
+	header := []string{"SyncID", "Average"}
+	for _, slave := range slaves {
+		header = append(header, fmt.Sprintf("Diff_%s", slave.Id))
+	}
+	for _, slave := range slaves {
+		header = append(header, fmt.Sprintf("Corr_%s", slave.Id))
+	}
+
+	if err := writer.Write(header); err != nil {
+		log.Fatalf("Failed to write header to sync log: %v", err)
+	}
+}
+
+func LogSyncCycleToCSV(
+	cycleId int,
+	average int64,
+	results map[string]int64,
+	slaves []SlaveConfiguration,
+) {
+	file, err := os.OpenFile(syncLogFilePath, os.O_APPEND|os.O_WRONLY, 0666)
+	if err != nil {
+		log.Printf("Failed to open sync log file for appending: %v", err)
+		return
+	}
+	defer file.Close()
+
+	writer := csv.NewWriter(file)
+	defer writer.Flush()
+
+	row := []string{
+		strconv.Itoa(cycleId),
+		strconv.FormatInt(average, 10),
+	}
+
+	for _, slave := range slaves {
+		if diff, ok := results[slave.Id]; ok {
+			row = append(row, strconv.FormatInt(diff, 10))
+		} else {
+			row = append(row, "Err")
+		}
+	}
+
+	for _, slave := range slaves {
+		if diff, ok := results[slave.Id]; ok {
+			correction := average - diff
+			row = append(row, strconv.FormatInt(correction, 10))
+		} else {
+			row = append(row, "Err")
+		}
+	}
+
+	if err := writer.Write(row); err != nil {
+		log.Printf("Failed to write record to sync log: %v", err)
+	}
+}
+
 // Master server methods
+type SlaveResult struct {
+	Slave      SlaveConfiguration
+	Difference int64
+	Success    bool
+}
 
 func GetTimeFromSlave(
 	masterConfiguration *MasterConfiguration,
@@ -175,21 +249,18 @@ func GetTimeFromSlave(
 	url := fmt.Sprintf("http://localhost:%d/time", slaveConfiguration.HttpServerPort)
 	response, err := httpClient.Get(url)
 	if err != nil {
-		log.Printf("[%s] Failed to contact slave %s: %v.\n", masterConfiguration.Id, slaveConfiguration.Id, err)
 		return 0, err
 	}
 	defer response.Body.Close()
 
 	bodyBytes, err := io.ReadAll(response.Body)
 	if err != nil {
-		log.Printf("[%s] Failed to read response from slave %s.\n", masterConfiguration.Id, slaveConfiguration.Id)
 		return 0, err
 	}
 
 	slaveTimeString := string(bodyBytes)
 	slaveTime, err := strconv.ParseInt(slaveTimeString, 10, 64)
 	if err != nil {
-		log.Printf("[%s] Invalid time format from slave %s: %s.\n", masterConfiguration.Id, slaveConfiguration.Id, slaveTimeString)
 		return 0, err
 	}
 
@@ -213,30 +284,60 @@ func SendCorrectionToSlave(
 
 	response, err := httpClient.Do(req)
 	if err != nil {
-		log.Printf("[%s] Failed to send correction to slave %s: %v.\n", masterConfiguration.Id, slaveConfiguration.Id, err)
 		return err
 	}
 	defer response.Body.Close()
 
 	if response.StatusCode != http.StatusOK {
-		log.Printf("[%s] Slave %s rejected correction with status: %s.\n", masterConfiguration.Id, slaveConfiguration.Id, response.Status)
 		return fmt.Errorf("status code %d", response.StatusCode)
 	}
 
 	return nil
 }
 
+func GetSlaveResult(
+	masterConfiguration *MasterConfiguration,
+	slaveConfiguration *SlaveConfiguration,
+	httpClient *http.Client,
+	clock *Clock,
+	maxDeviation int64,
+) SlaveResult {
+	var difference = int64(0)
+	var success = false
+
+	slaveTime, err := GetTimeFromSlave(masterConfiguration, slaveConfiguration, httpClient)
+	masterTime := clock.GetTime()
+
+	if err == nil {
+		difference = slaveTime - masterTime
+		success = true
+	} else {
+		difference = 0
+		success = false
+	}
+
+	absoluteDifference := difference
+	if absoluteDifference < 0 {
+		absoluteDifference = -absoluteDifference
+	}
+
+	if absoluteDifference > maxDeviation {
+		difference = 0
+	}
+
+	return SlaveResult{
+		Slave:      *slaveConfiguration,
+		Difference: difference,
+		Success:    success,
+	}
+}
+
 func SyncSlaves(
 	configuration *Configuration,
 	clock *Clock,
+	cycleId int,
 ) {
 	var waitGroup sync.WaitGroup
-
-	type SlaveResult struct {
-		Slave      SlaveConfiguration
-		Difference int64
-	}
-
 	var resultsMutex sync.Mutex
 	var results []SlaveResult
 
@@ -244,9 +345,7 @@ func SyncSlaves(
 		Timeout: time.Duration(configuration.Settings.RequestTimeoutMs) * time.Millisecond,
 	}
 
-	fmt.Printf("[%s] Starting synchronization cycle.\n", configuration.Master.Id)
-
-	maxDeviation := int64(configuration.Settings.MaxDeviationMs)
+	fmt.Printf("[%s] Starting synchronization cycle %d.\n", configuration.Master.Id, cycleId)
 
 	// gather times from slaves
 	for _, slave := range configuration.Slaves {
@@ -254,31 +353,16 @@ func SyncSlaves(
 		go func(slave SlaveConfiguration) {
 			defer waitGroup.Done()
 
-			var difference = int64(0)
-
-			slaveTime, err := GetTimeFromSlave(&configuration.Master, &slave, &httpClient)
-			masterTime := clock.GetTime()
-
-			if err != nil {
-				difference = 0
-			} else {
-				difference = slaveTime - masterTime
-			}
-
-			absoluteDifference := difference
-			if absoluteDifference < 0 {
-				absoluteDifference = -absoluteDifference
-			}
-
-			if absoluteDifference > maxDeviation {
-				difference = slaveTime - masterTime
-			}
+			slaveResult := GetSlaveResult(
+				&configuration.Master,
+				&slave,
+				&httpClient,
+				clock,
+				int64(configuration.Settings.MaxDeviationMs),
+			)
 
 			resultsMutex.Lock()
-			results = append(results, SlaveResult{
-				Slave:      slave,
-				Difference: difference,
-			})
+			results = append(results, slaveResult)
 			resultsMutex.Unlock()
 		}(slave)
 	}
@@ -287,18 +371,24 @@ func SyncSlaves(
 
 	// compute average
 	var sumDifferences int64 = 0
-	for index := range results {
-		res := &results[index]
-		fmt.Printf("[%s] Received time from slave %s with difference %d\n", configuration.Master.Id, res.Slave.Id, res.Difference)
-		sumDifferences += res.Difference
+	var validCount int64 = 0
+	resultsMap := make(map[string]int64)
+
+	for _, res := range results {
+		if res.Success {
+			sumDifferences += res.Difference
+			validCount++
+			resultsMap[res.Slave.Id] = res.Difference
+		}
 	}
 
 	average := int64(0)
-	if len(results) > 0 {
-		average = sumDifferences / int64(len(results))
+	if validCount > 0 {
+		average = sumDifferences / validCount
 	}
 
-	fmt.Printf("[%s] Average difference: %d. Sending corrections to slaves.\n", configuration.Master.Id, average)
+	// log to csv
+	LogSyncCycleToCSV(cycleId, average, resultsMap, configuration.Slaves)
 
 	// apply correction to master
 	masterTime := clock.GetTime()
@@ -306,22 +396,21 @@ func SyncSlaves(
 
 	// apply correction to slaves
 	for _, result := range results {
+		if !result.Success {
+			continue
+		}
 		waitGroup.Add(1)
-
 		correction := average - result.Difference
 
 		go func(slave SlaveConfiguration, correction int64) {
 			defer waitGroup.Done()
-			err := SendCorrectionToSlave(&configuration.Master, &slave, &httpClient, correction)
-			if err == nil {
-				fmt.Printf("[%s] Sent correction %d to slave %s.\n", configuration.Master.Id, correction, slave.Id)
-			}
+			_ = SendCorrectionToSlave(&configuration.Master, &slave, &httpClient, correction)
 		}(result.Slave, correction)
 	}
 
 	waitGroup.Wait()
 
-	fmt.Printf("[%s] Synchronization cycle finished.\n", configuration.Master.Id)
+	fmt.Printf("[%s] Synchronization cycle %d finished.\n", configuration.Master.Id, cycleId)
 }
 
 func StartMasterServer(
@@ -335,6 +424,7 @@ func StartMasterServer(
 	go clock.Run()
 
 	StartTimeLogger(configuration.Master.Id, clock)
+	InitializeSyncLogger(configuration.Slaves)
 
 	mux := http.NewServeMux()
 
@@ -356,13 +446,13 @@ func StartMasterServer(
 	readyChannel <- configuration.Master.Id
 
 	go func() {
-		// Wait 2 seconds for slaves to spin up
-		time.Sleep(2 * time.Second)
 		ticker := time.NewTicker(time.Duration(configuration.Settings.RefreshTimeMs) * time.Millisecond)
 		defer ticker.Stop()
 
+		cycleId := 1
 		for range ticker.C {
-			SyncSlaves(configuration, clock)
+			SyncSlaves(configuration, clock, cycleId)
+			cycleId++
 		}
 	}()
 
@@ -414,13 +504,6 @@ func HandlePostTimeRequest(
 	current := clock.GetTime()
 	newTarget := current + correction
 	clock.SetTarget(newTarget)
-
-	fmt.Printf("[%s] Correction received: %d. Adjusted time from %s to target %s.\n",
-		slaveConfiguration.Id,
-		correction,
-		FormatTime(current),
-		FormatTime(newTarget),
-	)
 
 	writer.WriteHeader(http.StatusOK)
 }
