@@ -1,6 +1,6 @@
 {
   "settings": {
-    "refreshTimeMs": 25,
+    "refreshTimeMs": 5000,
     "requestTimeoutMs": 20,
     "maxDeviationsMs": 100
   },
