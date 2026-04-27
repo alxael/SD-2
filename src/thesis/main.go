@@ -8,9 +8,17 @@ import (
 func main() {
 	outputSize := 16
 	sectionCount := 256
-	maxCores := 10
+	maxCores := 16
 
 	runtime.GOMAXPROCS(maxCores)
+
+	// speed tests
+	generateSpeedReport(outputSize, sectionCount)
+	fmt.Println("Generated speed tests!")
+
+	// speed tests for cores
+	generateSpeedReportCores(outputSize, sectionCount, maxCores)
+	fmt.Println("Generated speed tests for cores!")
 
 	// sensitivity tests
 	generateSensitivityTests(outputSize, sectionCount)
@@ -23,10 +31,6 @@ func main() {
 	// confusion and diffusion spread tests
 	generateConfusionDiffusionSpreadTests(outputSize, sectionCount)
 	fmt.Println("Generated confusion and diffusion spread tests!")
-
-	// speed tests
-	generateSpeedReport(outputSize, sectionCount)
-	fmt.Println("Generated speed tests!")
 
 	// null text distribution tests
 	generateNullTextDistributionTest(outputSize, sectionCount)

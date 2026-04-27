@@ -11,9 +11,9 @@ func generateConfusionDiffusionMeansTests(outputSize int, sectionCount int) {
 		BitChangeTestConfiguration{1e3, 10, 1e3},
 		BitChangeTestConfiguration{2.5e3, 10, 1e3},
 		BitChangeTestConfiguration{5e3, 10, 1e3},
-		// BitChangeTestConfiguration{7.5e3, 10, 1e3},
-		// BitChangeTestConfiguration{1e4, 10, 1e3},
-		// BitChangeTestConfiguration{1e6, 10, 1e2},
+		BitChangeTestConfiguration{7.5e3, 10, 1e3},
+		BitChangeTestConfiguration{1e4, 10, 1e3},
+		BitChangeTestConfiguration{1e6, 10, 1e2},
 	}
 
 	writer, file, err := generateCsvReportFile("test-confusion-diffusion-means")
