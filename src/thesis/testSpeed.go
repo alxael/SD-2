@@ -48,12 +48,12 @@ func generateSpeedReport(outputSize int, sectionCount int) {
 	}
 }
 
-func generateSpeedReportCores(outputSize int, sectionCount int, maxCores int) {
+func generateSpeedReportCores(outputSize int, sectionCount int, reportName string, inputBytes int) {
 	testCount := 100
-	inputBytes := 1 << 26
+	coreCounts := []int{1, 2, 4, 6, 8, 10, 12, 14, 16}
 	megabytes := float64(inputBytes) / (1024 * 1024)
 
-	writer, file, err := generateCsvReportFile("test-speed-cores")
+	writer, file, err := generateCsvReportFile(reportName)
 	if err != nil {
 		return
 	}
@@ -65,7 +65,7 @@ func generateSpeedReportCores(outputSize int, sectionCount int, maxCores int) {
 	originalCores := runtime.GOMAXPROCS(0)
 	defer runtime.GOMAXPROCS(originalCores)
 
-	for cores := 2; cores <= maxCores; cores += 2 {
+	for _, cores := range coreCounts {
 		runtime.GOMAXPROCS(cores)
 
 		configuration := SpeedTestConfiguration{testCount, inputBytes}
@@ -88,4 +88,12 @@ func generateSpeedReportCores(outputSize int, sectionCount int, maxCores int) {
 			fmt.Sprintf("%.4f", bestMbPerSecond),
 		})
 	}
+}
+
+func generateSpeedReportCoresLarge(outputSize int, sectionCount int) {
+	generateSpeedReportCores(outputSize, sectionCount, "test-speed-cores-large", 1<<26)
+}
+
+func generateSpeedReportCoresSmall(outputSize int, sectionCount int) {
+	generateSpeedReportCores(outputSize, sectionCount, "test-speed-cores-small", 1<<10)
 }

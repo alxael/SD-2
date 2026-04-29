@@ -17,8 +17,11 @@ func main() {
 	fmt.Println("Generated speed tests!")
 
 	// speed tests for cores
-	generateSpeedReportCores(outputSize, sectionCount, maxCores)
-	fmt.Println("Generated speed tests for cores!")
+	generateSpeedReportCoresLarge(outputSize, sectionCount)
+	fmt.Println("Generated speed tests for cores (large)!")
+
+	generateSpeedReportCoresSmall(outputSize, sectionCount)
+	fmt.Println("Generated speed tests for cores (small)!")
 
 	// sensitivity tests
 	generateSensitivityTests(outputSize, sectionCount)
