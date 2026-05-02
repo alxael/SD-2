@@ -16,13 +16,6 @@ func main() {
 	generateSpeedReport(outputSize, sectionCount)
 	fmt.Println("Generated speed tests!")
 
-	// speed tests for cores
-	generateSpeedReportCoresLarge(outputSize, sectionCount)
-	fmt.Println("Generated speed tests for cores (large)!")
-
-	generateSpeedReportCoresSmall(outputSize, sectionCount)
-	fmt.Println("Generated speed tests for cores (small)!")
-
 	// sensitivity tests
 	generateSensitivityTests(outputSize, sectionCount)
 	fmt.Println("Generated text example tests!")
@@ -43,6 +36,10 @@ func main() {
 	generateSampleTextDistributionTest(outputSize, sectionCount)
 	fmt.Println("Generated sample text distribution test!")
 
+	// character collisions test
+	generateCharacterCollisionsTest(outputSize, sectionCount)
+	fmt.Println("Generated character collisions test!")
+
 	// graphs
 	generateSensitivityGraph()
 	fmt.Println("Generated sensitivity graph!")
@@ -55,4 +52,13 @@ func main() {
 
 	generateConfusionDiffusionHistogramGraph()
 	fmt.Println("Generated confusion diffusion histogram graph!")
+
+	generateCharacterCollisionsGraph()
+	fmt.Println("Generated character collisions graph!")
+
+	generateChaosAttractorGraph()
+	fmt.Println("Generated chaos attractor graph!")
+
+	generateSpeedGraph()
+	fmt.Println("Generated speed graph!")
 }

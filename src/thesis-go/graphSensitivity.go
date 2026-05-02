@@ -52,12 +52,30 @@ func generateSensitivityGraph() {
 		return
 	}
 
+	initial := records[1]
 	variants := records[2:] // 5 variants
 
 	plotWidth := 20 * vg.Inch
 	plotHeight := 4 * vg.Inch
 
 	var images []image.Image
+
+	// initial hash plot
+	initialPlot := plot.New()
+	initialPlot.Title.Text = fmt.Sprintf("Initial: %s", initial[0])
+	initialPlot.X.Label.Text = "Bit Index"
+	initialPlot.Y.Label.Text = "Bit Value"
+	initialPlot.Y.Min = -0.1
+	initialPlot.Y.Max = 1.1
+	applyLargePlotStyle(initialPlot)
+
+	initialLine, err := bitsLine(initial[1], lineColors[0])
+	if err != nil {
+		fmt.Println("Could not create line:", err)
+		return
+	}
+	initialPlot.Add(initialLine)
+	images = append(images, renderPlotToImage(initialPlot, plotWidth, plotHeight))
 
 	for i, record := range variants {
 		variantMessage := record[0]

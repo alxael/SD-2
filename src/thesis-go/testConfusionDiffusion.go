@@ -8,12 +8,12 @@ import (
 
 func generateConfusionDiffusionMeansTests(outputSize int, sectionCount int) {
 	configurations := []BitChangeTestConfiguration{
-		BitChangeTestConfiguration{1e3, 10, 1e3},
-		BitChangeTestConfiguration{2.5e3, 10, 1e3},
-		BitChangeTestConfiguration{5e3, 10, 1e3},
-		BitChangeTestConfiguration{7.5e3, 10, 1e3},
-		BitChangeTestConfiguration{1e4, 10, 1e3},
-		BitChangeTestConfiguration{1e6, 10, 1e2},
+		{1e3, 10, 1e3},
+		{2.5e3, 10, 1e3},
+		{5e3, 10, 1e3},
+		// {7.5e3, 10, 1e3},
+		// {1e4, 10, 1e3},
+		// {1e6, 10, 1e2},
 	}
 
 	writer, file, err := generateCsvReportFile("test-confusion-diffusion-means")

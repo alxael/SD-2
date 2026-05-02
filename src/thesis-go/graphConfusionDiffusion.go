@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"image/color"
+	"math"
 	"strconv"
 
 	"gonum.org/v1/plot"
@@ -52,7 +53,6 @@ func generateConfusionDiffusionSpreadGraph(outputSize int) {
 	}
 	halfLine.Color = color.RGBA{R: 220, G: 50, B: 50, A: 255}
 	halfLine.Width = vg.Points(1)
-	halfLine.Dashes = []vg.Length{vg.Points(6), vg.Points(4)}
 	p.Add(halfLine)
 
 	err = saveGraphImage("test-confusion-diffusion-spread", p, 20*vg.Inch, 7*vg.Inch)
@@ -69,6 +69,7 @@ func generateConfusionDiffusionHistogramGraph() {
 
 	values := make(plotter.Values, len(records)-1)
 	labels := make([]string, len(records)-1)
+	totalSamples := 0.0
 	for index, record := range records[1:] {
 		if index%8 == 0 {
 			labels[index] = record[0]
@@ -77,6 +78,7 @@ func generateConfusionDiffusionHistogramGraph() {
 		}
 		v, _ := strconv.ParseFloat(record[1], 64)
 		values[index] = v
+		totalSamples += v
 	}
 
 	p := plot.New()
@@ -93,6 +95,30 @@ func generateConfusionDiffusionHistogramGraph() {
 	bars.Color = color.RGBA{R: 50, G: 120, B: 220, A: 255}
 	p.Add(bars)
 	p.NominalX(labels...)
+
+	n := float64(len(values) - 1)
+	mu := n / 2
+	sigma := math.Sqrt(n / 4)
+	const samplesPerBin = 20
+	curveSamples := (len(values)-1)*samplesPerBin + 1
+	curve := make(plotter.XYs, curveSamples)
+	for i := 0; i < curveSamples; i++ {
+		x := float64(i) / float64(samplesPerBin)
+		pdf := math.Exp(-0.5*math.Pow((x-mu)/sigma, 2)) / (sigma * math.Sqrt(2*math.Pi))
+		curve[i].X = x
+		curve[i].Y = pdf * totalSamples
+	}
+	expectedLine, err := plotter.NewLine(curve)
+	if err != nil {
+		fmt.Println("Could not create expected curve:", err)
+		return
+	}
+	expectedLine.Color = color.RGBA{R: 220, G: 50, B: 50, A: 255}
+	expectedLine.Width = vg.Points(2)
+	p.Add(expectedLine)
+	p.Legend.Add("Observed", bars)
+	p.Legend.Add("Expected", expectedLine)
+	p.Legend.Top = true
 
 	err = saveGraphImage("test-confusion-diffusion-spread-histogram", p, 20*vg.Inch, 7*vg.Inch)
 	if err != nil {
