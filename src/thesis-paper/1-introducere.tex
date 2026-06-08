@@ -35,3 +35,14 @@ Prima este tranzitivitatea topolgică, iar a doua este densitatea orbitelor peri
 Cea de a treia proprietate, sensibilitatea la condițiile inițiale, este asigurată de primele două proprietăți~\cite{banks1992}.
 Astfel, faptul că securitatea sistemelor haotice nu se întemeiază pe nicio construcție euristică este esențial.
 Absența unei structuri algebrice exploatabile, asociată de regulă cu vulnerabilitatea la atacurile cuantice, transformă această aparentă lipsă de structură într-un atu de securitate.
+
+Având în vedere aceste considerente, lucrarea de față propune o nouă funcție hash bazată pe sisteme dinamice discrete haotice.
+Securitatea acestei funcții hash se bazează pe proprietățile sistemelor haotice îmbinate cu tehnicile clasice de confuzie și difuzie.
+Ce diferențiază această funcție hash de cele existente este structura optimizată pentru procesare paralelă.
+Folosindu-se de arbori Merkle și de construcția sponge, această funcție hash are o performanță superioară în comparație cu alte funcții similare.
+Valorificând sistemele hardware moderne multicore, această funcție are o viteză de procesare care o face utilizabilă în scenarii de producție. \\
+
+În continuare, în Capitolul 2 vor fi prezentate sistemele haotice utilizate în această lucrare.
+Capitolul 3 va include o descriere exhaustivă a arhitecturii funcției hash propuse, împreună cu o implementare în pseudocod a funcției.
+În capitolul 4 va fi prezentată atât analiza criptografica a funcției hash, cât și analiza performanței acesteia, mai ales în comparație cu alte funcții hash similare.
+În final, în capitolul 5 vor fi prezentate concluziile și viitoare direcții de dezvoltare.

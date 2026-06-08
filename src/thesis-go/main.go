@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	outputSize := 32 // 256-bit digest
+	outputSize := 16 // 128-bit digest
 	maxCores := 16
 
 	// configurable tree-construction parameters (must match the Rust speed harness)
@@ -58,9 +58,6 @@ func main() {
 
 	generateCharacterCollisionsGraph()
 	fmt.Println("Generated character collisions graph!")
-
-	generateChaosAttractorGraph()
-	fmt.Println("Generated chaos attractor graph!")
 
 	generateSpeedGraph()
 	fmt.Println("Generated speed graph!")

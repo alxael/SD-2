@@ -10,7 +10,7 @@ use rayon::ThreadPoolBuilder;
 mod hash;
 use hash::hash;
 
-const OUTPUT_SIZE: usize = 32; // 256-bit digest
+const OUTPUT_SIZE: usize = 16; // 128-bit digest
 
 // configurable tree-construction parameters (must match thesis-go)
 const LEAF_SIZE: usize = 256 * hash::BITRATE; // 16 KB per leaf
