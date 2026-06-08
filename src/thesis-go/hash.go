@@ -17,6 +17,7 @@ const nodeExtraRounds = 4 // extra chaos rounds after a node absorbs its childre
 // configurable tree parameters. Both must stay multiples-friendly:
 //   - leafSize should be a multiple of bitrate (64 bytes)
 //   - treeFanout must be >= 2
+//
 // Changing either of these changes the hash output.
 var leafSize = 256 * bitrate // bytes per leaf (default 16 KB, fits L1)
 var treeFanout = 8           // children per internal node
