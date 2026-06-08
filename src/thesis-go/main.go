@@ -6,38 +6,41 @@ import (
 )
 
 func main() {
-	outputSize := 16
-	sectionCount := 256
+	outputSize := 32 // 256-bit digest
 	maxCores := 16
+
+	// configurable tree-construction parameters (must match the Rust speed harness)
+	leafSize = 256 * bitrate // 16 KB per leaf
+	treeFanout = 8           // children per internal node
 
 	runtime.GOMAXPROCS(maxCores)
 
 	// speed tests
-	generateSpeedReport(outputSize, sectionCount)
+	generateSpeedReport(outputSize)
 	fmt.Println("Generated speed tests!")
 
 	// sensitivity tests
-	generateSensitivityTests(outputSize, sectionCount)
+	generateSensitivityTests(outputSize)
 	fmt.Println("Generated text example tests!")
 
 	// statistical confusion and diffusion means tests
-	generateConfusionDiffusionMeansTests(outputSize, sectionCount)
+	generateConfusionDiffusionMeansTests(outputSize)
 	fmt.Println("Generated confusion and diffusion means tests!")
 
 	// confusion and diffusion spread tests
-	generateConfusionDiffusionSpreadTests(outputSize, sectionCount)
+	generateConfusionDiffusionSpreadTests(outputSize)
 	fmt.Println("Generated confusion and diffusion spread tests!")
 
 	// null text distribution tests
-	generateNullTextDistributionTest(outputSize, sectionCount)
+	generateNullTextDistributionTest(outputSize)
 	fmt.Println("Generated null text distribution test!")
 
 	// sample text distribution tests
-	generateSampleTextDistributionTest(outputSize, sectionCount)
+	generateSampleTextDistributionTest(outputSize)
 	fmt.Println("Generated sample text distribution test!")
 
 	// character collisions test
-	generateCharacterCollisionsTest(outputSize, sectionCount)
+	generateCharacterCollisionsTest(outputSize)
 	fmt.Println("Generated character collisions test!")
 
 	// graphs

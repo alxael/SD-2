@@ -1,0 +1,37 @@
+\section{Introducere}
+
+În societatea contemporană, tehnologia are un rol crucial în viața cotidiană.
+Influența dezvoltărilor mijloacelor de calcul este incontestabilă și se resfrânge asupra tuturor aspectelor vieții.
+Acest impact semnificativ nu este unul întâmplător, ci rezultatul deceniilor de inovații datând încă de la începutul secolului al XX-lea.
+Două arii conexe care s-au remarcat timpuriu a fi esențiale în această evoluție au fost criptografia și criptanaliza. \\
+
+Se evidențiază astfel o serie de probleme fundamentale în domeniul criptografiei: autentificarea și integritatea datelor.
+Autentificarea asigură veridicitatea identității iar integritatea datelor garantează absența modificărilor nedorite.
+În acest context, se remarcă funcțiile hash, un instrument criptografic cu aplicații variate.
+Însăși definiția funcției hash îi conferă universalitatea: transformă un șir de lungime arbitrară într-un șir de lungime fixă.
+Unidirecționalitatea funcției hash determină utilitatea acesteia.
+Începând sfărșitul mileniului al doilea, numeroase structuri de funcții hash au fost propuse și analizate.
+Prima generație de funcții hash moderne a fost reprezentată de MD5~\cite{rivest1992md5}, bazată pe construcția Merkle-Damgård~\cite{merkle1989,damgard1989}.
+Vulnerabilitățile acestei funcții la atacurile cu preimagine sau extinderea lungimii mesajului au devenit rapid evidente.
+Astfel, au urmat două alte iterații menite să adreseze problemele MD5: SHA-1~\cite{nist1995sha1} și SHA-2~\cite{nist2015sha2}.
+SHA-1 a fost ulterior compromisă, dar SHA-2 rămâne în continuare standardul la nivel de industrie.
+În ciuda adoptării generalizate, SHA-2 este construită pe aceeași construcție Merkele-Damgård.
+Defectele structurale ale acestei construcții au fost relevate de timp.
+Construcția s-a dovedit vulnerabilă la o multitidudine de atacuri, inclusiv cele cu preimagine și extinderea lungimii mesajului.
+Având în vedere acest context, apariția SHA-3 a fost inevitabilă.
+Structura SHA-3 se îndepărtează de structura definită de Merkle și Damgård, și adoptă construcția sponge~\cite{bertoni2007sponge}. \\
+
+În procesul de confuzie și difuzie caracteristic funcțiilor hash~\cite{shannon1949}, se remarcă o sumedenie de structuri și construcții.
+Majoritatea funcțiilor hash moderne se bazează pe substituții, transpoziții, permutări și operații aritmetice.
+Aceste metode sunt eficiente, însă proprietățile lor criptografice nu sunt garantate de un model matematic unitar.
+Mularea pe o serie de criterii statistice, fără a exista o garanție structurală produce un efect de avalanșă incert.
+Implică, într-un mod real, că în eventualitatea unei vulnerabilități aceasta se va propaga la dependenți.
+Un instrument care conferă prin definiție confuzie și difuzie este reprezentat de sistemele dinamice haotice~\cite{alvarez2006}.
+O subcategorie a sistemelor dinamice discrete este reprezentată de sistemele haotice.
+Un astfel de sistem descrie o transformare deterministă care pare complet predictibilă la o primă inspecție.
+În ciuda acestui fapt, manifestă un comportament aparent aleator și imposibil de anticipat practic.
+Aceste sisteme prezintă trei proprietăți definitorii care se aliniază remarcabil cu cerințele criptografice formulate de Shannon~\cite{shannon1949,devaney1989,alvarez2006}.
+Prima este tranzitivitatea topolgică, iar a doua este densitatea orbitelor periodice.
+Cea de a treia proprietate, sensibilitatea la condițiile inițiale, este asigurată de primele două proprietăți~\cite{banks1992}.
+Astfel, faptul că securitatea sistemelor haotice nu se întemeiază pe nicio construcție euristică este esențial.
+Absența unei structuri algebrice exploatabile, asociată de regulă cu vulnerabilitatea la atacurile cuantice, transformă această aparentă lipsă de structură într-un atu de securitate.

@@ -26,9 +26,8 @@ func findCargo() (string, error) {
 // generateSpeedReport runs the Rust implementation and writes the resulting
 // CSV into thesis-go/reports/test-speed.csv. The Rust binary is responsible
 // for measuring across input sizes and core counts.
-func generateSpeedReport(outputSize int, sectionCount int) {
+func generateSpeedReport(outputSize int) {
 	_ = outputSize
-	_ = sectionCount
 
 	if err := os.MkdirAll("reports", 0755); err != nil {
 		fmt.Println("Could not create reports directory:", err)

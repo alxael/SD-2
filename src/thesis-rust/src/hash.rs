@@ -5,9 +5,7 @@ pub const STATE_STEP: usize = 16;
 pub const BITRATE: usize = STATE_STEP * 4; // 64 bytes
 
 // tree construction parameters (must match thesis-go)
-pub const LEAF_BLOCKS: usize = 256;
-pub const LEAF_SIZE: usize = LEAF_BLOCKS * BITRATE; // 16384
-pub const TREE_FANOUT: usize = 8;
+// leaf_size and tree_fanout are supplied per call to `hash`.
 pub const NODE_EXTRA_ROUNDS: usize = 4;
 
 pub const DOMAIN_LEAF: u32 = 0x4C454146; // "LEAF"
@@ -72,7 +70,7 @@ impl State {
             let mut x = self.data[index];
             let mut y = self.data[b_index];
 
-            for _ in 0..16 {
+            for _ in 0..20 {
                 let (nx, ny) = chaos_round(x, y);
                 x = nx;
                 y = ny;
@@ -157,29 +155,29 @@ fn hash_node(children: &[State], level: u32) -> State {
     state
 }
 
-pub fn hash(input: &[u8], output_size: usize, _section_count: usize) -> Vec<u8> {
+pub fn hash(input: &[u8], output_size: usize, leaf_size: usize, tree_fanout: usize) -> Vec<u8> {
     let padded = pad(input, BITRATE);
 
-    let num_leaves = ((padded.len() + LEAF_SIZE - 1) / LEAF_SIZE).max(1);
+    let num_leaves = ((padded.len() + leaf_size - 1) / leaf_size).max(1);
 
     let mut nodes: Vec<State> = (0..num_leaves)
         .into_par_iter()
         .map(|i| {
-            let start = i * LEAF_SIZE;
-            let end = (start + LEAF_SIZE).min(padded.len());
+            let start = i * leaf_size;
+            let end = (start + leaf_size).min(padded.len());
             hash_leaf(&padded[start..end])
         })
         .collect();
 
     let mut level: u32 = 1;
     while nodes.len() > 1 {
-        let group_count = (nodes.len() + TREE_FANOUT - 1) / TREE_FANOUT;
+        let group_count = (nodes.len() + tree_fanout - 1) / tree_fanout;
         let current = nodes;
         let next: Vec<State> = (0..group_count)
             .into_par_iter()
             .map(|i| {
-                let start = i * TREE_FANOUT;
-                let end = (start + TREE_FANOUT).min(current.len());
+                let start = i * tree_fanout;
+                let end = (start + tree_fanout).min(current.len());
                 hash_node(&current[start..end], level)
             })
             .collect();

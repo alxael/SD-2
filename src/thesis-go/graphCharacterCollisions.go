@@ -43,11 +43,6 @@ func generateCharacterCollisionsGraph() {
 	p.Add(bars)
 	p.NominalX(labels...)
 
-	// Theoretical expected counts: under a random-oracle assumption each
-	// digest byte matches independently with probability 1/256, so the number
-	// of equal bytes per trial is Binomial(outputSize, 1/256). Expected count
-	// at k equal bytes is N * C(outputSize, k) * p^k * (1-p)^(outputSize-k),
-	// where N = total number of trials = sum of histogram bars.
 	expected := make(plotter.XYs, outputSize+1)
 	p256 := 1.0 / 256.0
 	for k := 0; k <= outputSize; k++ {
@@ -70,7 +65,7 @@ func generateCharacterCollisionsGraph() {
 	expectedPoints.GlyphStyle.Radius = vg.Points(3)
 	p.Add(expectedLine, expectedPoints)
 	p.Legend.Add("Observed", bars)
-	p.Legend.Add("Expected (Binomial, p=1/256)", expectedLine)
+	p.Legend.Add("Expected", expectedLine)
 	p.Legend.Top = true
 
 	err = saveGraphImage("test-character-collisions", p, 20*vg.Inch, 7*vg.Inch)

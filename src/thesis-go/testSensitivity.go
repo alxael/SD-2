@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-func generateSensitivityTests(outputSize int, sectionCount int) {
+func generateSensitivityTests(outputSize int) {
 	initial := "Time spent with cats is never wasted."
 	variants := []string{
 		"Time spent with cars is never wasted.",  // 1. t in cats -> r
@@ -18,7 +18,7 @@ func generateSensitivityTests(outputSize int, sectionCount int) {
 	}
 
 	messages := append([]string{initial}, variants...)
-	initialDigest := hash([]byte(initial), outputSize, sectionCount)
+	initialDigest := hash([]byte(initial), outputSize)
 
 	err := os.MkdirAll("reports", 0755)
 	if err != nil {
@@ -36,7 +36,7 @@ func generateSensitivityTests(outputSize int, sectionCount int) {
 	writer.Write([]string{"message", "hash", "changedBits", "changedBitsPercentage"})
 
 	for index, message := range messages {
-		digest := hash([]byte(message), outputSize, sectionCount)
+		digest := hash([]byte(message), outputSize)
 		hexString := hex.EncodeToString(digest)
 
 		changedBitsPercentage := ""

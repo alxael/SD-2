@@ -61,7 +61,7 @@ type BitChangeTestConfiguration struct {
 	maxTestBytes int
 }
 
-func runBitChangeTest(outputSize int, sectionCount int, configuration BitChangeTestConfiguration) BitDifferenceResult {
+func runBitChangeTest(outputSize int, configuration BitChangeTestConfiguration) BitDifferenceResult {
 	inputSize := configuration.minTestBytes + mathrand.Intn(configuration.maxTestBytes-configuration.minTestBytes+1)
 
 	input := make([]byte, inputSize)
@@ -72,13 +72,13 @@ func runBitChangeTest(outputSize int, sectionCount int, configuration BitChangeT
 	bitIndex := mathrand.Intn(inputSize * 8)
 	flipped[bitIndex/8] ^= 1 << (bitIndex % 8)
 
-	original := hash(input, outputSize, sectionCount)
-	modified := hash(flipped, outputSize, sectionCount)
+	original := hash(input, outputSize)
+	modified := hash(flipped, outputSize)
 
 	return bitDifference(original, modified, outputSize)
 }
 
-func generateBitChangeTests(outputSize int, sectionCount int, configuration BitChangeTestConfiguration) []BitDifferenceResult {
+func generateBitChangeTests(outputSize int, configuration BitChangeTestConfiguration) []BitDifferenceResult {
 	results := make([]BitDifferenceResult, configuration.testCount)
 	var waitGroup sync.WaitGroup
 
@@ -86,7 +86,7 @@ func generateBitChangeTests(outputSize int, sectionCount int, configuration BitC
 		waitGroup.Add(1)
 		go func(index int) {
 			defer waitGroup.Done()
-			results[index] = runBitChangeTest(outputSize, sectionCount, configuration)
+			results[index] = runBitChangeTest(outputSize, configuration)
 		}(index)
 	}
 	waitGroup.Wait()
@@ -101,21 +101,21 @@ type SpeedTestConfiguration struct {
 	testBytes int
 }
 
-func runSpeedTest(outputSize int, sectionCount int, configuration SpeedTestConfiguration) int64 {
+func runSpeedTest(outputSize int, configuration SpeedTestConfiguration) int64 {
 	input := make([]byte, configuration.testBytes)
 	rand.Read(input)
 
 	start := time.Now()
-	hash(input, outputSize, sectionCount)
+	hash(input, outputSize)
 	duration := time.Since(start)
 
 	return int64(duration.Nanoseconds())
 }
 
-func generateSpeedTests(outputSize int, sectionCount int, configuration SpeedTestConfiguration) []int64 {
+func generateSpeedTests(outputSize int, configuration SpeedTestConfiguration) []int64 {
 	results := make([]int64, configuration.testCount)
 	for index := range configuration.testCount {
-		results[index] = runSpeedTest(outputSize, sectionCount, configuration)
+		results[index] = runSpeedTest(outputSize, configuration)
 	}
 	return results
 }

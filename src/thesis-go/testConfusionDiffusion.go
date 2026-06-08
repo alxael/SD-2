@@ -6,14 +6,14 @@ import (
 	"strconv"
 )
 
-func generateConfusionDiffusionMeansTests(outputSize int, sectionCount int) {
+func generateConfusionDiffusionMeansTests(outputSize int) {
 	configurations := []BitChangeTestConfiguration{
 		{1e3, 10, 1e3},
 		{2.5e3, 10, 1e3},
 		{5e3, 10, 1e3},
-		// {7.5e3, 10, 1e3},
-		// {1e4, 10, 1e3},
-		// {1e6, 10, 1e2},
+		{7.5e3, 10, 1e3},
+		{1e4, 10, 1e3},
+		{1e6, 10, 1e2},
 	}
 
 	writer, file, err := generateCsvReportFile("test-confusion-diffusion-means")
@@ -26,7 +26,7 @@ func generateConfusionDiffusionMeansTests(outputSize int, sectionCount int) {
 	writer.Write([]string{"testCount", "meanChangedBits", "meanChangedBitsProbability", "minimumChangedBits", "maximumChangedBits", "standardDeviationChangedBits", "standardDeviationChangedBitsProbability"})
 
 	for _, configuration := range configurations {
-		results := generateBitChangeTests(outputSize, sectionCount, configuration)
+		results := generateBitChangeTests(outputSize, configuration)
 
 		totalChangedBits := 0
 		minChangedBits := results[0].changedBits
@@ -67,9 +67,9 @@ func generateConfusionDiffusionMeansTests(outputSize int, sectionCount int) {
 	}
 }
 
-func generateConfusionDiffusionSpreadTests(outputSize int, sectionCount int) {
+func generateConfusionDiffusionSpreadTests(outputSize int) {
 	configuration := BitChangeTestConfiguration{1e4, 10, 1e4}
-	results := generateBitChangeTests(outputSize, sectionCount, configuration)
+	results := generateBitChangeTests(outputSize, configuration)
 
 	spreadWriter, spreadFile, err := generateCsvReportFile("test-confusion-diffusion-spread")
 	if err != nil {

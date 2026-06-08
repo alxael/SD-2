@@ -12,10 +12,14 @@ const stateStep = 16
 const bitrate = stateStep * 4 // 64 bytes
 
 // tree construction parameters
-const leafBlocks = 256                // bitrate-blocks per leaf -> 16 KB per leaf (fits L1)
-const leafSize = leafBlocks * bitrate // 16384 bytes
-const treeFanout = 8                  // children per internal node
-const nodeExtraRounds = 4             // extra chaos rounds after a node absorbs its children
+const nodeExtraRounds = 4 // extra chaos rounds after a node absorbs its children
+
+// configurable tree parameters. Both must stay multiples-friendly:
+//   - leafSize should be a multiple of bitrate (64 bytes)
+//   - treeFanout must be >= 2
+// Changing either of these changes the hash output.
+var leafSize = 256 * bitrate // bytes per leaf (default 16 KB, fits L1)
+var treeFanout = 8           // children per internal node
 
 // domain separation constants injected into the capacity portion of fresh sponges
 const domainLeaf uint32 = 0x4C454146 // "LEAF"
@@ -73,7 +77,7 @@ func (state *State) chaos() {
 		x := state.data[index]
 		y := state.data[bIndex]
 
-		for round := 0; round < 16; round++ {
+		for round := 0; round < 20; round++ {
 			x, y = chaosRound(x, y)
 		}
 
@@ -185,9 +189,7 @@ func parallelMap(n int, work func(i int)) {
 	wg.Wait()
 }
 
-func hash(input []byte, outputSize int, sectionCount int) []byte {
-	_ = sectionCount // tree shape is determined by input length and fixed constants
-
+func hash(input []byte, outputSize int) []byte {
 	padded := pad(input, bitrate)
 
 	// leaves: fixed-size chunks of leafSize bytes (the last leaf may be smaller

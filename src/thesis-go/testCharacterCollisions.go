@@ -6,14 +6,14 @@ import (
 	"sync"
 )
 
-func generateCharacterCollisionsTest(outputSize int, sectionCount int) {
+func generateCharacterCollisionsTest(outputSize int) {
 	inputBitLength := 10000
 	inputByteLength := inputBitLength / 8
 
 	input := make([]byte, inputByteLength)
 	rand.Read(input)
 
-	originalDigest := hash(input, outputSize, sectionCount)
+	originalDigest := hash(input, outputSize)
 
 	histogram := make([]int, outputSize+1)
 	equalBytesCounts := make([]int, inputBitLength)
@@ -28,7 +28,7 @@ func generateCharacterCollisionsTest(outputSize int, sectionCount int) {
 			copy(flipped, input)
 			flipped[bitIndex/8] ^= 1 << (bitIndex % 8)
 
-			modifiedDigest := hash(flipped, outputSize, sectionCount)
+			modifiedDigest := hash(flipped, outputSize)
 
 			equalBytes := 0
 			for index := 0; index < outputSize; index++ {

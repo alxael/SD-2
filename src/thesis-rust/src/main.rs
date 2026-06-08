@@ -10,8 +10,12 @@ use rayon::ThreadPoolBuilder;
 mod hash;
 use hash::hash;
 
-const OUTPUT_SIZE: usize = 16;
-const SECTION_COUNT: usize = 256;
+const OUTPUT_SIZE: usize = 32; // 256-bit digest
+
+// configurable tree-construction parameters (must match thesis-go)
+const LEAF_SIZE: usize = 256 * hash::BITRATE; // 16 KB per leaf
+const TREE_FANOUT: usize = 8; // children per internal node
+
 const TEST_COUNT: usize = 50;
 const INPUT_SIZES: [usize; 6] = [
     1 << 18,
@@ -28,7 +32,7 @@ fn run_speed_test(input_bytes: usize) -> u128 {
     rand::thread_rng().fill_bytes(&mut input);
 
     let start = Instant::now();
-    let _ = hash(&input, OUTPUT_SIZE, SECTION_COUNT);
+    let _ = hash(&input, OUTPUT_SIZE, LEAF_SIZE, TREE_FANOUT);
     start.elapsed().as_nanos()
 }
 

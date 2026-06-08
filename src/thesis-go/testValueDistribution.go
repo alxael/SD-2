@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func writeDistributionCSVs(input string, outputSize int, sectionCount int, label string) {
+func writeDistributionCSVs(input string, outputSize int, label string) {
 	inputWriter, inputFile, err := generateCsvReportFile("test-value-distribution-" + label + "-input")
 	if err != nil {
 		return
@@ -19,7 +19,7 @@ func writeDistributionCSVs(input string, outputSize int, sectionCount int, label
 		inputWriter.Write([]string{strconv.Itoa(index), strconv.Itoa(int(input[index]))})
 	}
 
-	digest := hash([]byte(input), outputSize, sectionCount)
+	digest := hash([]byte(input), outputSize)
 	hexString := hex.EncodeToString(digest)
 
 	outputWriter, outputFile, err := generateCsvReportFile("test-value-distribution-" + label + "-output")
@@ -35,12 +35,12 @@ func writeDistributionCSVs(input string, outputSize int, sectionCount int, label
 	}
 }
 
-func generateNullTextDistributionTest(outputSize int, sectionCount int) {
+func generateNullTextDistributionTest(outputSize int) {
 	input := strings.Repeat("\x00", 1000)
-	writeDistributionCSVs(input, outputSize, sectionCount, "null")
+	writeDistributionCSVs(input, outputSize, "null")
 }
 
-func generateSampleTextDistributionTest(outputSize int, sectionCount int) {
+func generateSampleTextDistributionTest(outputSize int) {
 	sampleText := "The cat (Felis catus), also called domestic cat and house cat, is a " +
 		"small carnivorous mammal. It is an obligate carnivore, requiring a predominantly " +
 		"meat-based diet. Its retractable claws are adapted to killing small prey species " +
@@ -60,5 +60,5 @@ func generateSampleTextDistributionTest(outputSize int, sectionCount int) {
 		sampleText = sampleText[:1000]
 	}
 
-	writeDistributionCSVs(sampleText, outputSize, sectionCount, "sample")
+	writeDistributionCSVs(sampleText, outputSize, "sample")
 }
