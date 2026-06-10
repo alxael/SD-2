@@ -61,6 +61,23 @@
 % Listări de cod
 \usepackage{listings}
 
+% Pseudocod cu formatare matematică
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+\SetKwInput{KwData}{Date de intrare}
+\SetKwInput{KwResult}{Rezultat}
+\SetKwFor{For}{pentru}{execută}{sfârșit}
+\SetKwFor{ForEach}{pentru fiecare}{execută}{sfârșit}
+\SetKwRepeat{Repeat}{repetă de}{ori}
+\SetKwFunction{FPermutare}{permutare}
+\SetKwProg{Fn}{Funcția}{:}{}
+% cuvinte-cheie traduse în română
+\SetKw{KwTo}{până la}
+\SetKwIF{If}{ElseIf}{Else}{dacă}{atunci}{altfel dacă}{altfel}{sfârșit}
+\SetKwFor{While}{cât timp}{execută}{sfârșit}
+\renewcommand{\algorithmcfname}{Algoritmul}
+% rotație circulară spre stânga
+\newcommand{\rotl}[2]{#1 \lll #2}
+
 % Linkuri interactive în PDF
 \usepackage[
     colorlinks,
@@ -137,10 +154,11 @@
 \let\ps@plain\ps@main
 
 \include{1-introducere}
-\include{2-functia-haotica}
-\include{3-functia-hash}
-\include{4-analiza-performantei}
-\include{5-concluzii}
+\include{2-preliminarii}
+\include{3-functia-haotica}
+\include{4-functia-hash}
+\include{5-analiza-performantei}
+\include{6-concluzii}
 
 \printbibliography[heading=bibintoc]
 

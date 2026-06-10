@@ -26,9 +26,9 @@ func generateConfusionDiffusionSpreadGraph(outputSize int) {
 	}
 
 	p := plot.New()
-	p.Title.Text = "Confusion & Diffusion Spread"
-	p.X.Label.Text = "Iteration"
-	p.Y.Label.Text = "Changed Bits"
+	p.Title.Text = "Numărul de biți modificați"
+	p.X.Label.Text = "Iterație"
+	p.Y.Label.Text = "Biți modificați"
 	p.Y.Min = 0
 	p.Y.Max = float64(outputSize * 8)
 	applyLargePlotStyle(p)
@@ -82,9 +82,9 @@ func generateConfusionDiffusionHistogramGraph() {
 	}
 
 	p := plot.New()
-	p.Title.Text = "Confusion & Diffusion Spread Histogram"
-	p.X.Label.Text = "Changed Bits"
-	p.Y.Label.Text = "Frequency"
+	p.Title.Text = "Histograma numărului de biți modificați"
+	p.X.Label.Text = "Biți modificați"
+	p.Y.Label.Text = "Frecvență"
 	applyLargePlotStyle(p)
 
 	bars, err := plotter.NewBarChart(values, vg.Points(6))
@@ -116,8 +116,8 @@ func generateConfusionDiffusionHistogramGraph() {
 	expectedLine.Color = color.RGBA{R: 220, G: 50, B: 50, A: 255}
 	expectedLine.Width = vg.Points(2)
 	p.Add(expectedLine)
-	p.Legend.Add("Observed", bars)
-	p.Legend.Add("Expected", expectedLine)
+	p.Legend.Add("Observat", bars)
+	p.Legend.Add("Așteptat", expectedLine)
 	p.Legend.Top = true
 
 	err = saveGraphImage("test-confusion-diffusion-spread-histogram", p, 20*vg.Inch, 7*vg.Inch)

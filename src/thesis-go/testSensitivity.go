@@ -8,13 +8,13 @@ import (
 )
 
 func generateSensitivityTests(outputSize int) {
-	initial := "Time spent with cats is never wasted."
+	initial := "Timpul petrecut cu pisici nu este niciodată irosit."
 	variants := []string{
-		"Time spent with cars is never wasted.",  // 1. t in cats -> r
-		"Time spenT with cats is never wasted.",  // 2. t in spent -> T
-		"Time spent with cats is never wasted ",  // 3. period -> space
-		"Time spent with cats!is never wasted.",  // 4. space after cats -> !
-		"Times spent with cats is never wasted.", // 5. s added after Time
+		"Timpul petrecut cu pisaci nu este niciodată irosit.",  // 1. i din pisici -> a
+		"Timpul petrecuT cu pisici nu este niciodată irosit.",  // 2. t din petrecut -> T
+		"Timpul petrecut cu pisici nu este niciodată irosit ",  // 3. punct -> spațiu
+		"Timpul petrecut cu pisici!nu este niciodată irosit.",  // 4. spațiu după pisici -> !
+		"Timpul petrecut cu pisici nu este niciodată iirosit.", // 5. i adăugat la începutul cuvântului irosit
 	}
 
 	messages := append([]string{initial}, variants...)

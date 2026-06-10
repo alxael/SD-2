@@ -110,7 +110,7 @@ fn pad(data: &[u8], size: usize) -> Vec<u8> {
     let total = data.len() + 1 + pad_len;
     let mut padded = Vec::with_capacity(total);
     padded.extend_from_slice(data);
-    padded.push(0x01);
+    padded.push(0x80);
     padded.resize(total, 0);
     padded[total - 1] = 0x01;
     padded
@@ -141,11 +141,11 @@ fn hash_leaf(chunk: &[u8]) -> State {
 
 fn hash_node(children: &[State], level: u32) -> State {
     let mut state = new_domain_state(DOMAIN_NODE, level);
-    let mut buf = vec![0u8; children.len() * STATE_SIZE * 4];
+    let mut buf = vec![0u8; children.len() * STATE_STEP * 4];
     for (i, c) in children.iter().enumerate() {
-        let off = i * STATE_SIZE * 4;
-        for (j, w) in c.data.iter().enumerate() {
-            buf[off + j * 4..off + j * 4 + 4].copy_from_slice(&w.to_be_bytes());
+        let off = i * STATE_STEP * 4;
+        for j in 0..STATE_STEP {
+            buf[off + j * 4..off + j * 4 + 4].copy_from_slice(&c.data[j].to_be_bytes());
         }
     }
     absorb_into(&mut state, &buf);

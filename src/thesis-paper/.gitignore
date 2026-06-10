@@ -22,3 +22,4 @@
 *.dvi
 *.bbl-SAVE-ERROR
 *.bcf-SAVE-ERROR
+resources/*

@@ -29,9 +29,9 @@ func generateCharacterCollisionsGraph() {
 	outputSize := len(records) - 2 // equalBytes ranges from 0..outputSize
 
 	p := plot.New()
-	p.Title.Text = "Character Collisions Histogram"
-	p.X.Label.Text = "Equal Bytes"
-	p.Y.Label.Text = "Collision Count"
+	p.Title.Text = "Histograma coliziunilor de caractere"
+	p.X.Label.Text = "Octeți egali"
+	p.Y.Label.Text = "Număr de coliziuni"
 	applyLargePlotStyle(p)
 
 	bars, err := plotter.NewBarChart(values, vg.Points(20))
@@ -64,8 +64,8 @@ func generateCharacterCollisionsGraph() {
 	expectedPoints.GlyphStyle.Color = color.RGBA{R: 220, G: 50, B: 50, A: 255}
 	expectedPoints.GlyphStyle.Radius = vg.Points(3)
 	p.Add(expectedLine, expectedPoints)
-	p.Legend.Add("Observed", bars)
-	p.Legend.Add("Expected", expectedLine)
+	p.Legend.Add("Observat", bars)
+	p.Legend.Add("Așteptat", expectedLine)
 	p.Legend.Top = true
 
 	err = saveGraphImage("test-character-collisions", p, 20*vg.Inch, 7*vg.Inch)

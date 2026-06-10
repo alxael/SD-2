@@ -1,0 +1,63 @@
+\section{Preliminarii}
+
+\subsection{Funcția hash}
+
+O funcție hash criptografică este o transformare deterministă $h \colon \{0,1\}^* \to \{0,1\}^n$ care asociază datelor de intrare de lungime arbitrară un hash de lungime fixă $n$.
+Pentru a fi utilă în context criptografic, ea trebuie să fie eficientă din punct de veder computațional și să satisfacă trei proprietăți de securitate ~\cite{merkle1989, damgard1989}: 
+\begin{enumerate}
+    \item Rezistența la preimagine: dat fiind un hash $y$, este infezabil să se găsească un mesaj $m$ cu $h(m) = y$.
+    \item Rezistența la a doua preimagine: dat un mesaj $m$, este infezabil să se găsească $m' \neq m$ cu $h(m') = h(m)$.
+    \item Rezistența la coliziuni: este infezabil să se găsească orice pereche $m \neq m'$ cu $h(m) = h(m')$.
+\end{enumerate}
+
+\subsection{Sistemul dinamice}
+
+Un sistem dinamic discret este un triplet $(T, X, f)$, unde:
+\begin{enumerate}
+    \item $T$ este spațiul timpului, iar $(T, +)$ este un monoid aditiv
+    \item $X$ este spațiul de stări sau spațiul fazelor
+    \item $f \colon T \times X \to X$ este funcția de evoluție, care satisface următoarele condiții:
+    \begin{enumerate}
+        \item $f(0, x) = x$
+        \item $f(t+s, x) = f(t, f(s, x))$ pentru orice $t, s \in T$ și $x \in X$
+    \end{enumerate}
+\end{enumerate}
+Devaney ~\cite{devaney1989} definește un sistem haotic ca având trei proprietăți esențiale: sensibilitate la condițiile inițiale, tranzitivitate topologică și faptul că mulțimea orbitelor periodice este densă. 
+Banks ~\cite{banks1992} demonstrează că tranzitivitatea topologică și densitatea orbitelor periodice implică sensibilitatea la condițiile inițiale. \\
+
+Exponentul Lyapunov măsoară rata medie de separare exponențială a două orbite pornite din condiții inițiale infinitezimal de apropiate.
+Pentru un sistem unidimensional cu funcția de evoluție $f$, el este definit ca:
+\begin{equation}
+    \lambda = \lim_{N \to \infty} \frac{1}{N} \sum_{k=0}^{N-1} \ln \abs{f'(x_k)},
+\end{equation}
+unde $x_k$ sunt iteratele orbitei.
+O valoare $\lambda > 0$ indică divergența exponențială a orbitelor vecine și constituie semnătura cantitativă a comportamentului haotic, în timp ce $\lambda \le 0$ corespunde unei dinamici stabile sau cvasi-periodice~\cite{devaney1989, alvarez2006}. \\
+
+Relevanța exponentului Lyapunov pentru o funcție hash reiese tocmai din această sensibilitate la condițiile inițiale.
+Un exponent strict pozitiv garantează că modificarea unui singur bit din datele de intrare se propagă exponențial pe parcursul iterațiilor, separând rapid orbitele corespunzătoare a două mesaje aproape identice.
+Acest mecanism stă la baza efectului de avalanșă dorit, prin care date de intrare cu diferențe minime produc hash-uri complet necorelate, iar magnitudinea exponentului oferă o măsură cantitativă a vitezei cu care difuzia atinge saturația~\cite{alvarez2006}. \\
+
+\subsection{Construcția Sponge}
+
+Construcția Sponge este o schemă de proiectare a funcțiilor hash care operează asupra unei stări interne de lățime $b$ biți.
+Starea internă este împărțită într-o rată $r$ și o capacitate $c$.
+Asupra stării interne se aplică în mod repetat o permutare fixă $f$~\cite{bertoni2007sponge}.
+Procesarea se desfășoară în două faze: în faza de absorbție, blocurile mesajului, de câte $r$ biți, sunt XOR-ate cu partea de rată a stării.
+Ulterior se aplică permutarea $f$. 
+În faza de stoarcere, biții pentru hash sunt extrași din partea de rată, intercalați cu aplicări succesive ale lui $f$, până la obținerea lungimii dorite a hash-ului.
+Capacitatea $c$, care nu este expusă niciodată direct la intrare sau la ieșire, determină nivelul de securitate al construcției. \\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{sponge.png}
+    \caption{Construcția Sponge ~\cite{bertoni2007sponge}.}
+    \label{fig:sponge}
+\end{figure}
+
+\subsection{Arborele Merkle}
+
+Arborele Merkle este o structură de date arborescentă, de regulă binară, în care fiecare frunză conține hash-ul unui bloc de date.
+Fiecare nod intern conține hash-ul obținut prin concatenarea și aplicarea funcției hash asupra hash-urilor copiilor săi~\cite{merkle1989}.
+Hash-ul nodului rădăcină, numit rădăcină Merkle, sintetizează astfel întregul set de date într-o singură valoare de lungime fixă.
+Orice modificare a unui bloc se propagă în mod inevitabil până la rădăcină.
+Această organizare permite paralelizarea funcțiilor hash, întrucât subarborii independenți pot fi procesați simultan. \\

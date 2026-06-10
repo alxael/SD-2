@@ -1,0 +1,44 @@
+\section{Funcția haotică}
+
+Nucleul funcției hash propuse îl constituie o transformare haotică aplicată repetat asupra stării interne.
+Această transformare nu se reduce la o singură hartă, ci la suprapunerea a două sisteme dinamice distincte, alese astfel încât slăbiciunile fiecăruia să fie compensate de celălalt.
+Prima este harta brutarului, responsabilă de difuzie, iar a doua este harta omului din turtă dulce, responsabilă de confuzie.
+Compunerea lor produce, la fiecare iterație, atât amestecarea uniformă a stării, cât și o neliniaritate suficientă pentru a împiedica orice descriere algebrică simplă a procesului. \\
+
+\subsection{Harta brutarului}
+
+Harta brutarului este un sistem dinamic clasic~\cite{devaney1989}, a cărui denumire provine dintr-o analogie sugestivă cu procesul de frământare a aluatului.
+Brutarul întinde aluatul pe o direcție, dublându-i lungimea, după care îl pliază la loc peste sine.
+Repetarea acestui gest amestecă rapid și ireversibil orice particulă din interiorul aluatului, dispersând-o în întreaga masă.
+Formal, sistemul dinamic are următoarea relație de recurență:
+
+\begin{equation}
+    (x_{n+1}, y_{n+1}) =
+    \begin{cases}
+        (2x_n, \frac{y_n}{2}) & \text{dacă } 0 \leq x_n < \frac{1}{2} \\
+        (2 - 2x_n, 1 - \frac{y_n}{2}) & \text{dacă } \frac{1}{2} \leq x_n < 1
+    \end{cases}
+\end{equation}
+
+\subsection{Harta omului din turtă dulce}
+
+Harta omului din turtă dulce, introdusă de Devaney~\cite{devaney1989}, este un sistem dinamic haotic bidimensional.
+Numele său provine din forma caracteristică a atractorului, care, vizualizat în plan, amintește de silueta unei figurine din turtă dulce.
+Definitorie pentru această hartă este prezența valorii absolute, singura sursă de neliniaritate. \\
+Formal, sistemul dinamic are următoarea relație de recurență:
+
+\begin{equation}
+    (x_{n+1}, y_{n+1}) = (1-y_n + \abs{x_n}, x_n)
+\end{equation}
+
+\subsection{Suprapunerea celor două hărți}
+
+Cele două sisteme se completează reciproc tocmai prin slăbiciunile lor complementare.
+Harta brutarului oferă o amestecare uniformă și lipsită de insule de stabilitate, dar este liniară.
+Harta omului din turtă dulce oferă neliniaritatea absentă din prima, dar conține regiuni cvasi-periodice.
+Aplicată prima, harta brutarului dispersează punctul pe întregul spațiu de stări.
+Astfel, dacă punctul curent se află într-o regiune cvasi-periodică a hărții omului din turtă dulce, punctul va fi împins într-o nouă orbită.
+Aplicată în continuare, harta omului din turtă dulce împletește neliniar coordonatele astfel decorelate.
+În consecință, această rundă compusă, deși complet deterministă, manifestă un comportament haotic, cu o sensibilitate extremă la condițiile inițiale.
+Alegerea celor două sisteme a fost motivată de faptul că ambele prezintă un comportament haotic și sunt eficiente din punct de vedere computațional.
+Definițiile acestora presupun o implementare cu operații aritmetice simple, fiind utilizate tipuri de date native.

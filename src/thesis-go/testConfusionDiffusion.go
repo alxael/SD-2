@@ -13,7 +13,6 @@ func generateConfusionDiffusionMeansTests(outputSize int) {
 		{5e3, 10, 1e3},
 		{7.5e3, 10, 1e3},
 		{1e4, 10, 1e3},
-		{1e6, 10, 1e2},
 	}
 
 	writer, file, err := generateCsvReportFile("test-confusion-diffusion-means")

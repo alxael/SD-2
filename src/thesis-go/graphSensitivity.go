@@ -62,9 +62,9 @@ func generateSensitivityGraph() {
 
 	// initial hash plot
 	initialPlot := plot.New()
-	initialPlot.Title.Text = fmt.Sprintf("Initial: %s", initial[0])
-	initialPlot.X.Label.Text = "Bit Index"
-	initialPlot.Y.Label.Text = "Bit Value"
+	initialPlot.Title.Text = fmt.Sprintf("Inițial: %s", initial[0])
+	initialPlot.X.Label.Text = "Indice bit"
+	initialPlot.Y.Label.Text = "Valoare bit"
 	initialPlot.Y.Min = -0.1
 	initialPlot.Y.Max = 1.1
 	applyLargePlotStyle(initialPlot)
@@ -84,9 +84,9 @@ func generateSensitivityGraph() {
 		changedPct := record[3]
 
 		p := plot.New()
-		p.Title.Text = fmt.Sprintf("Variant %d: %s (changed: %s bits, %s%%)", i+1, variantMessage, changedBits, changedPct)
-		p.X.Label.Text = "Bit Index"
-		p.Y.Label.Text = "Bit Value"
+		p.Title.Text = fmt.Sprintf("Varianta %d: %s (modificați: %s biți, %s%%)", i+1, variantMessage, changedBits, changedPct)
+		p.X.Label.Text = "Indice bit"
+		p.Y.Label.Text = "Valoare bit"
 		p.Y.Min = -0.1
 		p.Y.Max = 1.1
 		applyLargePlotStyle(p)

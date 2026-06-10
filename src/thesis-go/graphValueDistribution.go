@@ -94,15 +94,15 @@ func generateValueDistributionGraphs() {
 	red := color.RGBA{R: 220, G: 50, B: 50, A: 255}
 
 	// null distribution
-	nullInput := plotFromCSV("test-value-distribution-null-input", "Null Input (Character Values)", "Character Index", "ASCII Value", blue)
-	nullOutput := plotFromCSV("test-value-distribution-null-output", "Null Output (Hex Digit Values)", "Hex Character Index", "Hex Digit Value", red)
+	nullInput := plotFromCSV("test-value-distribution-null-input", "Input null (valori caractere)", "Indice caracter", "Valoare ASCII", blue)
+	nullOutput := plotFromCSV("test-value-distribution-null-output", "Output null (valori cifre hexazecimale)", "Indice caracter hexazecimal", "Valoare cifră hexazecimală", red)
 	if nullInput != nil && nullOutput != nil {
 		saveSideBySide(nullInput, nullOutput, "test-value-distribution-null")
 	}
 
 	// sample distribution
-	sampleInput := plotFromCSV("test-value-distribution-sample-input", "Sample Input (Character Values)", "Character Index", "ASCII Value", blue)
-	sampleOutput := plotFromCSV("test-value-distribution-sample-output", "Sample Output (Hex Digit Values)", "Hex Character Index", "Hex Digit Value", red)
+	sampleInput := plotFromCSV("test-value-distribution-sample-input", "Input exemplu (valori caractere)", "Indice caracter", "Valoare ASCII", blue)
+	sampleOutput := plotFromCSV("test-value-distribution-sample-output", "Output exemplu (valori cifre hexazecimale)", "Indice caracter hexazecimal", "Valoare cifră hexazecimală", red)
 	if sampleInput != nil && sampleOutput != nil {
 		saveSideBySide(sampleInput, sampleOutput, "test-value-distribution-sample")
 	}

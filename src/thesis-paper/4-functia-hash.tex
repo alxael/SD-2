@@ -1,0 +1,107 @@
+\section{Funcția hash}
+
+Funcția hash propusă în această lucrare se bazează pe toate conceptele prezentate în secțiunile anterioare.
+Structura Sponge este aplicată pe blocuri, iar apoi prin intermediul arborelui Merkle se obține hash-ul întregului mesaj.
+Dimensiunea stării interne este de 1024 biți, împărțită în 512 biți pentru rată și 512 biți de capacitate.
+Transformarea internă a stării este realizată printr-o secțiune haotică, completată de metode clasice de confuzie și difuzie. 
+Pentru fragmentele următoare de pseudocod, considerăm următoarele convenții de notație:
+\begin{itemize}
+    \item $S$ reprezintă starea internă, formată din 32 de cuvinte de 32 de biți, $S_i$ fiind cuvântul de pe poziția $i$.
+    \item $a \oplus b$ reprezintă XOR-are (disjuncție exclusivă) bit cu bit.
+    \item $\rotl{a}{k}$ reprezintă rotația circulară spre stânga a cuvântului $a$ cu $k$ poziții.
+    \item $a \bmod b$ reprezintă restul împărțirii lui $a$ la $b$.
+    \item $l$ reprezintă lungimea hash-ului final, exprimată în biți.
+\end{itemize}
+
+\subsection{Preprocesarea}
+Secțiunea de preprocesare are rolul de a pregăti mesajul inițial pentru absorbția în construcția Sponge.
+Astfel, lungimea mesajului preprocesat trebuie să fie un multiplu al ratei de 512 biți.
+Considerând că mesajul inițial este $M$, alcătuit din $M=M_1 \| M_2 \| \ldots \| M_n$, unde $M_i$ reprezintă un byte, mesajul preprocesat va fi:
+
+\begin{equation}
+    M' = M \| \texttt{0x80} \| \texttt{0x00} \| \ldots \| \texttt{0x00} \| \texttt{0x01},
+\end{equation}
+
+\subsection{Generarea frunzelor}
+După preprocesare, mesajul este împărțit în blocuri de dimensiune configurabilă.
+Fiecare bloc $B_i$ va reprezenta o frunză în arborele Merkle, iar hash-ul său va fi calculat prin aplicarea construcției Sponge.
+Trebuie menționat faptul că dimensiunea unui bloc este un parametru configurabil.
+
+\subsection{Construcția Sponge}
+Construcția Sponge este aplicată pe fiecare bloc $B_i$ pentru a genera hash-ul.
+Fiecare bloc de 512 biți este XOR-at cu partea de rată a stării interne, după care se aplică permutarea haotică.
+Permutarea $f$ a construcției Sponge este aplicată după fiecare absorbție a unui bloc.
+Starea internă este împărțită în 16 secțiuni, fiecare formată din două cuvinte de 32 de biți, unul din partea de rată și celălalt din partea de capacitate.
+Ulterior, cele două sisteme haotice sunt aplicate secvențial pe fiecare secțiune de 20 de ori.
+După ce toate secțiunle au fost procesate, o etapă de difuzie amestecă secțiunile între ele.
+Astfel, mai întâi se amestecă cuvintele vecine din fiecare jumătate, apoi se amestecă cele două jumătăți între ele.
+Amestecarea se realizează prin rotații de biți și XOR-are, pentru asigura propagarea schimbărilor în întreaga stare internă.
+
+\begin{algorithm}[!hbpt]
+\caption{Permutarea stării}
+\label{alg:chaos}
+\KwData{starea internă $S_i,\ i \in \overline{0,15}$}
+\KwResult{starea nou permutată $S'_i$}
+\For{$i \gets 0$ \KwTo $15$}{
+    $x \gets S_i$\;
+    $y \gets S_{i+16}$\;
+    \For{$r \gets 1$ \KwTo $20$}{
+        \tcp{harta brutarului}
+        \eIf{$x < 2^{31}$}{
+            $x \gets x \ll 1$\;
+            $y \gets y \gg 1$\;
+        }{
+            $x \gets (\lnot x) \ll 1$\;
+            $y \gets ((\lnot y) \gg 1) \lor 2^{31}$\;
+        }
+        \tcp{harta omului din turtă dulce}
+        \eIf{$x \geq 2^{31}$}{
+            $a \gets -x$\;
+        }{
+            $a \gets x$\;
+        }
+        $(x,\ y) \gets (a - y,\ x)$\;
+    }
+    $S_i \gets x$\;
+    $S_{i+16} \gets y$\;
+    \tcp{cuplarea coloanelor: reinjectare în capacitatea următoare}
+    $t \gets (i + 1) \bmod 16 + 16$\;
+    $S_t \gets S_t \oplus (\rotl{x}{9})$\;
+    $S_t \gets S_t \oplus (\rotl{y}{17})$\;
+}
+\tcp{difuzie: pas înainte și pas înapoi în fiecare jumătate}
+\ForEach{$b \in \{0, 16\}$}{
+    \For{$i \gets 0$ \KwTo $15$}{
+        $S_{b+i} \gets S_{b+i} \oplus (\rotl{S_{b + (i+1) \bmod 16}}{13})$\;
+    }
+}
+\ForEach{$b \in \{0, 16\}$}{
+    \For{$i \gets 15$ \KwTo $0$}{
+        $S_{b+i} \gets S_{b+i} \oplus (\rotl{S_{b + (i+15) \bmod 16}}{11})$\;
+    }
+}
+\tcp{difuzie: pas de amestecare între rată și capacitate}
+\For{$i \gets 0$ \KwTo $15$}{
+    $S_i \gets S_i \oplus (\rotl{S_{i+16}}{7})$\;
+}
+\For{$i \gets 0$ \KwTo $15$}{
+    $S_{i+16} \gets S_{i+16} \oplus (\rotl{S_i}{19})$\;
+}
+\end{algorithm}
+
+\subsection{Construirea arborelui Merkle}
+Construcția Sponge și algoritmul descris anterior sunt utilizate în cadrul arborelui Merkle.
+Dacă nodul curent este o frunză, atunci datele absorbite sunt blocurile $B_i$ ale mesajului preprocesat $M'$.
+Dacă nodul curent este un nod intern, atunci datele absorbite sunt concatenarea ratelor de la toții copii nodului curent.
+Trebuie menționat faptul că numărul maxim de copii ai unui nod intern este configurabil.
+La finalul procesului, rădăcina arborelui Merkle conține hash-ul întregului mesaj.
+Înainte de faza de stoarcere a hash-ului din construcția Sponge, se aplică un număr de runde intermediare, unde nu este absorbit niciun bloc de date.
+Numărul de runde intermediare $n$ este determinat de lungimea mesajului inițial și de dimensiunea finală a hash-ului prin următoarea formulă:
+
+\begin{equation}
+    n = 9 + (|M| \bmod 37 + |l| \bmod 31) \bmod 11
+\end{equation}
+
+La final, hash-ul este extras din partea de rată a stării interne.
+Se execută faza de stoarcere până când se obțin suficienți biți pentru a forma hash-ul.
+Având în vedere că rata este de 512 biți, dacă lungimea hash-ului final $l$ nu este multiplu de 512, biții rămași sunt trunchiați.

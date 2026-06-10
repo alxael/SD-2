@@ -101,14 +101,14 @@ func (state *State) squeeze() []byte {
 }
 
 func pad(data []byte, size int) []byte {
-	// 10*1 padding: append 0x01, zeros, 0x01 to fill to size boundary
+	// 10*1 padding: append 0x80, zeros, 0x01 to fill to size boundary
 	padLen := size - 1 - (len(data) % size)
 	if padLen < 1 {
 		padLen += size
 	}
 	padded := make([]byte, len(data)+1+padLen)
 	copy(padded, data)
-	padded[len(data)] = 0x01
+	padded[len(data)] = 0x80
 	padded[len(padded)-1] = 0x01
 	return padded
 }
@@ -144,15 +144,15 @@ func hashLeaf(chunk []byte) State {
 	return state
 }
 
-// hashNode produces an internal-node state by absorbing the serialized states
-// of its children, then running a few extra chaos rounds.
+// hashNode produces an internal-node state by absorbing the rate halves of its
+// children's states, then running a few extra chaos rounds.
 func hashNode(children []State, level uint32) State {
 	state := newDomainState(domainNode, level)
-	buf := make([]byte, len(children)*stateSize*4)
+	buf := make([]byte, len(children)*stateStep*4)
 	for i, c := range children {
-		off := i * stateSize * 4
-		for j, w := range c.data {
-			binary.BigEndian.PutUint32(buf[off+j*4:], w)
+		off := i * stateStep * 4
+		for j := 0; j < stateStep; j++ {
+			binary.BigEndian.PutUint32(buf[off+j*4:], c.data[j])
 		}
 	}
 	absorbInto(&state, buf)

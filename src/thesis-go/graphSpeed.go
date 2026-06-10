@@ -78,9 +78,9 @@ func generateSpeedGraph() {
 	}
 
 	p := plot.New()
-	p.Title.Text = "Hash Throughput vs Input Size"
-	p.X.Label.Text = "Input Size (MB)"
-	p.Y.Label.Text = "Throughput (MB/s)"
+	p.Title.Text = "Viteza funcției"
+	p.X.Label.Text = "Dimensiunea input-ului (MB)"
+	p.Y.Label.Text = "Viteză (MB/s)"
 	p.X.Scale = plot.LogScale{}
 	p.X.Tick.Marker = fixedTicker(xTicks)
 	applyLargePlotStyle(p)
@@ -105,7 +105,7 @@ func generateSpeedGraph() {
 		scatter.GlyphStyle.Radius = vg.Points(3)
 
 		p.Add(line, scatter)
-		p.Legend.Add(fmt.Sprintf("%s core", coreLabels[i]), line, scatter)
+		p.Legend.Add(fmt.Sprintf("%s nuclee", coreLabels[i]), line, scatter)
 	}
 
 	p.Legend.Top = true
