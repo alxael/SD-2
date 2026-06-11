@@ -1,1 +1,16 @@
 \section{Concluzii}
+În această lucrare am proiectat și implementat o funcție hash bazată pe sisteme dinamice discrete haotice, construită în jurul structurii Sponge și al arborelui Merkle.
+Analiza statistică prezentată în capitolul anterior confirmă faptul că funcția propusă posedă proprietăți criptografice solide.
+Testele de confuzie și difuzie arată că o modificare minimă a mesajului de intrare determină o schimbare semnificativă a hash-ului.
+Rezistența la coliziuni este, de asemenea, foarte bună: distribuția numărului de bytes egali și suma diferențelor absolute ale bytes-ilor se apropie de valorile teoretice, iar numărul de coliziuni observate este sub limita teoretică.
+În plus, valorile hash sunt distribuite uniform pe întreg spațiul de ieșire, ceea ce împiedică atacurile bazate pe criptanaliză statistică.
+Toate aceste rezultate sunt comparabile cu cele raportate de funcțiile hash consacrate din literatura de specialitate, ceea ce indică un nivel de securitate adecvat aplicațiilor criptografice moderne. \\
+
+Pe lângă proprietățile criptografice, funcția hash propusă se remarcă prin viteza și eficiența sa pe sistemele cu mai multe nuclee.
+Datorită arborelui Merkle, calculul hash-ului poate fi paralelizat eficient, viteza de procesare crescând aproape liniar cu numărul de nuclee alocate.
+Pe sistemele moderne testate, funcția atinge viteze de procesare de ordinul sutelor de MB/s, comparabile cu cele ale funcțiilor hash utilizate la nivel de industrie, precum SHA-256 sau MD5.
+Acest lucru este cu atât mai semnificativ cu cât funcțiile hash consacrate rulează pe un singur nucleu și beneficiază adesea de optimizări hardware dedicate. \\
+
+Ca direcții viitoare de dezvoltare, o primă posibilitate ar fi implementarea funcției în limbajul C, în vederea obținerii unor viteze de procesare și mai mari.
+O a doua direcție o constituie explorarea metodelor de optimizare hardware, prin care funcția ar putea fi accelerată suplimentar pe arhitecturi specializate.
+În cele din urmă, o direcție promițătoare ar fi extinderea funcției hash într-o schemă completă de criptare și decriptare, valorificând proprietățile sistemelor dinamice haotice care stau la baza ei.

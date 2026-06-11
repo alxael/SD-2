@@ -1,0 +1,6 @@
+testCount,meanChangedBits,meanChangedBitsProbability,minimumChangedBits,maximumChangedBits,standardDeviationChangedBits,standardDeviationChangedBitsProbability
+1000,63.7940,49.8391,46,82,5.6662,4.4267
+2500,63.9660,49.9734,46,82,5.6108,4.3835
+5000,64.0132,50.0103,44,84,5.6486,4.4129
+7500,63.9604,49.9691,42,85,5.6490,4.4133
+10000,63.9707,49.9771,43,84,5.6916,4.4466

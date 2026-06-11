@@ -261,3 +261,234 @@ Testele au fost efectuate pe trei sisteme diferite, cu configurații hardware di
     \item Laptop cu procesor AMD Ryzen 7 8845HS, 32GB RAM și Ubuntu 24.04
     \item Desktop cu procesor Intel Xeon Platinum 8370C, 64GB RAM și Windows 11
 \end{itemize}
+
+Rezultatele obținute pe sistemul cu procesor Apple M2 Pro, exprimate în MB/s, sunt prezentate în tabelul de mai jos:
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Dimensiune (MB)} & \textbf{1 nucleu} & \textbf{2 nuclee} & \textbf{4 nuclee} & \textbf{8 nuclee} & \textbf{10 nuclee} \\
+        \hline
+        0.25 & 52.65 & 155.38 & 268.55 & 338.79 & 343.48 \\
+        \hline
+        1    & 91.49 & 173.59 & 271.40 & 421.63 & 519.94 \\
+        \hline
+        4    & 89.51 & 174.95 & 338.89 & 162.70 & 570.02 \\
+        \hline
+        16   & 92.27 & 178.69 & 342.54 & 560.61 & 627.20 \\
+        \hline
+        64   & 93.11 & 166.53 & 327.01 & 582.62 & 639.29 \\
+        \hline
+        256  & 90.96 & 180.47 & 331.52 & 571.27 & 661.22 \\
+        \hline
+    \end{tabular}
+    \caption{Viteza de procesare (MB/s) în funcție de dimensiunea datelor și de numărul de nuclee, pe procesorul Apple M2 Pro}
+    \label{tab:viteza-m2}
+\end{table}
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Dimensiune (MB)} & \textbf{1 nucleu} & \textbf{2 nuclee} & \textbf{4 nuclee} & \textbf{8 nuclee} & \textbf{16 nuclee} \\
+        \hline
+        0.25 & 67.09  & 188.10 & 324.59 & 468.86 & 864.34 \\
+        \hline
+        1    & 131.49 & 209.21 & 379.07 & 595.84 & 831.97 \\
+        \hline
+        4    & 135.54 & 248.40 & 428.89 & 779.25 & 955.24 \\
+        \hline
+        16   & 133.67 & 246.30 & 415.68 & 637.99 & 938.65 \\
+        \hline
+        64   & 138.62 & 259.55 & 445.26 & 714.29 & 966.03 \\
+        \hline
+        256  & 139.12 & 255.76 & 446.70 & 741.35 & 970.63 \\
+        \hline
+    \end{tabular}
+    \caption{Viteza de procesare (MB/s) în funcție de dimensiunea datelor și de numărul de nuclee, pe procesorul AMD Ryzen 7 8845HS}
+    \label{tab:viteza-amd}
+\end{table}
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Dimensiune (MB)} & \textbf{1 nucleu} & \textbf{2 nuclee} & \textbf{4 nuclee} & \textbf{8 nuclee} & \textbf{16 nuclee} \\
+        \hline
+        0.25 & 79.90 & 140.52 & 201.08 & 78.50  & 188.41 \\
+        \hline
+        1    & 84.53 & 137.24 & 281.44 & 358.55 & 356.11 \\
+        \hline
+        4    & 82.88 & 143.51 & 284.30 & 405.09 & 549.16 \\
+        \hline
+        16   & 82.40 & 153.20 & 300.18 & 497.98 & 562.38 \\
+        \hline
+        64   & 71.85 & 158.33 & 208.55 & 494.77 & 641.86 \\
+        \hline
+        256  & 85.73 & 168.38 & 305.16 & 511.90 & 756.98 \\
+        \hline
+    \end{tabular}
+    \caption{Viteza de procesare (MB/s) în funcție de dimensiunea datelor și de numărul de nuclee, pe procesorul Intel Xeon Platinum 8370C}
+    \label{tab:viteza-intel}
+\end{table}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{images/test-speed-mac.png}
+    \caption{Viteza de procesare în funcție de dimensiunea datelor și de numărul de nuclee, pe procesorul Apple M2 Pro}
+    \label{fig:viteza-m2}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{images/test-speed-amd.png}
+    \caption{Viteza de procesare în funcție de dimensiunea datelor și de numărul de nuclee, pe procesorul AMD Ryzen 7 8845HS}
+    \label{fig:viteza-amd}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{images/test-speed-intel.jpg}
+    \caption{Viteza de procesare în funcție de dimensiunea datelor și de numărul de nuclee, pe procesorul Intel Xeon Platinum 8370C}
+    \label{fig:viteza-intel}
+\end{figure}
+
+\newpage
+Așadar, putem observa că pe majoritatea sistemelor moderne, funcția hash propusă va atinge viteze de procesare de ordinul a sute de MB/s.
+În toate comparațiile ulterioare vom considera că viteza funcției hash pe un sistem cu 8 nuclee este aceea de 600MB/s.
+Această viteză este comparabilă cu cea a funcțiilor hash utilizate la nivel de industrie, precum SHA-256 sau MD5.
+În ciuda faptului că aceste funcții hash consacrate rulează pe un singur nucleu și adesea permit optimizări hardware, funcția hash propusă atinge viteze similare.
+Acest rezultat se datorează în mare parte arborelui Merkle, care permite o paralelizare eficientă a întregului proces de calcul al hash-ului.
+
+\subsection{Comparația cu alte funcții hash}
+Pentru a evalua calitatea funcției hash propuse în raport cu literatura de specialitate, se vor compara toate metricile de performanța prezentate cu cele raportate de alte funcții hash bazate pe sisteme dinamice haotice.
+Toate valorile se referă la funcții hash pe 128 de biți și au fost determinate, acolo unde a fost posibil, pentru $N = 10000$ de mesaje de test.
+În tabelul~\ref{tab:comparatie-confuzie-difuzie} sunt prezentați cei șase indicatori statistici discutați anterior: numărul mediu de biți modificați $B_{med}$, numărul minim $B_{\min}$ și maxim $B_{\max}$ de biți modificați, probabilitatea medie de modificare $P$, precum și abaterile standard $\Delta B$ și $\Delta P$.
+
+\begin{table}[!htbp]
+    \centering
+    \small
+    \setlength{\tabcolsep}{4pt}
+    \begin{tabular}{|l|c|c|c|c|c|c|}
+        \hline
+        \textbf{Funcția hash} & $B_{med}$ & $B_{\min}$ & $B_{\max}$ & $P$ (\%) & $\Delta B$ & $\Delta P$ (\%) \\
+        \hline
+        \textbf{Funcția propusă} & $64.0771$ & $42$ & $85$ & $50.0602$ & $5.6502$ & $4.4142$ \\
+        \hline
+        Amin et al.~\cite{amin2009} & $63.84$ & --- & --- & $49.88$ & $5.58$ & $4.38$ \\
+        \hline
+        Kanso \& Ghebleh~\cite{kanso2013} & $63.94$ & $45$ & $84$ & $49.95$ & $5.64$ & $4.41$ \\
+        \hline
+        Kanso \& Ghebleh~\cite{kanso2015} & $64.00$ & $44$ & $84$ & $50.00$ & $5.65$ & $4.41$ \\
+        \hline
+        Wu \& Wang~\cite{wu2015} & $64.014$ & --- & --- & $50.011$ & $5.654$ & $4.417$ \\
+        \hline
+        Zhao et al.~\cite{xiang2015} & $63.9279$ & $40$ & $85$ & $49.94$ & $5.3234$ & $4.16$ \\
+        \hline
+        Li \& Li~\cite{li2016} & $64.0415$ & $47$ & $81$ & $50.03$ & $5.7929$ & $4.53$ \\
+        \hline
+        Ahmad et al.~\cite{ahmad2017} & $63.781$ & $45$ & $83$ & $49.828$ & $5.937$ & $4.638$ \\
+        \hline
+        Boriga \& Tilcă~\cite{boriga2017} & $64.2136$ & $47$ & $84$ & $50.3315$ & $5.7040$ & $4.3421$ \\
+        \hline
+        Zaouia et al.~\cite{zaouia2023} & $64.005$ & $43$ & $84$ & $50.004$ & $5.582$ & $4.361$ \\
+        \hline
+        \textbf{Valoarea ideală} & $64$ & --- & --- & $50$ & --- & --- \\
+        \hline
+    \end{tabular}
+    \caption{Indicatorii de confuzie și difuzie din diverse funcții hash bazate pe sisteme dinamice haotice}
+    \label{tab:comparatie-confuzie-difuzie}
+\end{table}
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        \textbf{Funcția hash} & \textbf{Minim} & \textbf{Maxim} & \textbf{Medie} & \textbf{Medie/byte} \\
+        \hline
+        \textbf{Funcția propusă} & $567$ & $2278$ & $1364.9053$ & $85.3066$ \\
+        \hline
+        Kanso \& Ghebleh~\cite{kanso2013} & $656$ & $2391$ & $1364$ & $85.25$ \\
+        \hline
+        Kanso \& Ghebleh~\cite{kanso2015} & $628$ & $2326$ & $1363.7$ & $85.23$ \\
+        \hline
+        Li \& Li~\cite{li2016} & $685$ & $1972$ & $1253$ & $78.31$ \\
+        \hline
+        Ahmad et al.~\cite{ahmad2017} & $796$ & $2436$ & $1374.1$ & $85.88$ \\
+        \hline
+        Zaouia et al.~\cite{zaouia2023} & $520$ & $2256$ & $1365.03$ & $85.31$ \\
+        \hline
+        \textbf{Valoarea ideală} & --- & --- & $1360$ & $85.33$ \\
+        \hline
+    \end{tabular}
+    \caption{Suma diferenței absolute a bytes-ilor în diverse funcții hash bazate pe sisteme dinamice haotice}
+    \label{tab:comparatie-coliziuni}
+\end{table}
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|l|c|c|c|c|c|c|}
+        \hline
+        \textbf{Funcția hash} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
+        \hline
+        \textbf{Funcția propusă} & $9401$ & $589$ & $10$ & $0$ & $0$ & $0$ \\
+        \hline
+        Kanso \& Ghebleh~\cite{kanso2015} & $9403$ & $586$ & $11$ & $0$ & $0$ & $0$ \\
+        \hline
+        Li \& Li~\cite{li2016} & $9495$ & $505$ & $0$ & $0$ & $0$ & $0$ \\
+        \hline
+        Ahmad et al.~\cite{ahmad2017} & $9387$ & $586$ & $27$ & $0$ & $0$ & $0$ \\
+        \hline
+        \textbf{Valori teoretice} & $9393$ & $590$ & $17$ & $0$ & $0$ & $0$ \\
+        \hline
+    \end{tabular}
+    \caption{Distribuția numărului de bytes egali în diverse funcții hash bazate pe sisteme dinamice haotice}
+    \label{tab:comparatie-coliziuni-bytes}
+\end{table}
+
+În tabelul~\ref{tab:comparatie-viteza} este comparată viteza de procesare a funcției hash propuse cu cele raportate de alte funcții hash bazate pe sisteme dinamice haotice.
+Pentru funcția propusă sunt prezentate șase valori: trei corespunzătoare execuției pe câte 8 nuclee și trei corespunzătoare vitezei maxime obținute pe un singur nucleu, câte una pentru fiecare dintre cele trei sisteme de testare.
+Pentru a permite o comparație unitară, toate valorile au fost exprimate în MB/s; acolo unde sursele raportează viteza în Mb/s (megabiți pe secundă), aceasta a fost convertită prin împărțire la 8.
+Funcțiile hash care nu raportează o viteză de procesare comparabilă nu au fost incluse în comparație.
+
+\begin{table}[!htbp]
+    \centering
+    \small
+    \begin{tabular}{|l|c|l|}
+        \hline
+        \textbf{Funcția hash} & \textbf{Viteza (MB/s)} & \textbf{Hardware utilizat} \\
+        \hline
+        \textbf{Funcția propusă} & $571.27$ & Apple M2 Pro, 8 nuclee \\
+        \hline
+        \textbf{Funcția propusă} & $741.35$ & AMD Ryzen 7 8845HS, 8 nuclee \\
+        \hline
+        \textbf{Funcția propusă} & $511.90$ & Intel Xeon Platinum 8370C, 8 nuclee \\
+        \hline
+        \textbf{Funcția propusă} & $93.11$ & Apple M2 Pro, 1 nucleu \\
+        \hline
+        \textbf{Funcția propusă} & $139.12$ & AMD Ryzen 7 8845HS, 1 nucleu \\
+        \hline
+        \textbf{Funcția propusă} & $85.73$ & Intel Xeon Platinum 8370C, 1 nucleu \\
+        \hline
+        Kanso \& Ghebleh~\cite{kanso2013} & $8.75$ & Intel Core i7 @ 2.70 GHz, 1 nucleu \\
+        \hline
+        Kanso \& Ghebleh~\cite{kanso2015} & $10.31$ & Intel Core i7-2600 @ 3.40 GHz, 1 nucleu \\
+        \hline
+        Li \& Li~\cite{li2016} & $16.51$ & Intel Pentium IV @ 2.50 GHz, 1 nucleu \\
+        \hline
+        Kwok \& Tang~\cite{kwok2005} & $63.77$ & Intel Pentium IV @ 2.40 GHz, 1 nucleu \\
+        \hline
+        Boriga \& Tilcă~\cite{boriga2017} & $72.00$ & Intel Core i3 @ 2.53 GHz, 1 nucleu \\
+        \hline
+        Ahmad et al.~\cite{ahmad2017} & $116.65$ & Intel Core i5-6300U @ 2.40 GHz, 1 nucleu \\
+        \hline
+    \end{tabular}
+    \caption{Compararea vitezei de procesare a funcției hash propuse cu cea raportată de alte funcții hash bazate pe sisteme dinamice haotice}
+    \label{tab:comparatie-viteza}
+\end{table}
+
+Se observă că funcția hash propusă atinge viteze de procesare semnificativ mai mari decât cele raportate de funcțiile hash din literatura de specialitate.
+Trebuie menționat însă, că funcția hash a fost testată pe sisteme hardware moderne, iar că discrepanța de performanță poate fi influențată și de hardware-ul utilizat.
+În plus, proprietățile de confuzie și difuzie, rezistența la coliziuni și distribuția valorilor hash a funcției propuse sunt comparabile sau chiar superioare celor raportate de alte funcții hash bazate pe sisteme dinamice haotice.
+Astfel, putem afirma ca funcția hash propusă constituie un instrument criptografic robust și eficient, utilizabil la nivel de industrie.
