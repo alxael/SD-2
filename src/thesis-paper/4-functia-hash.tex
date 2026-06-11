@@ -33,9 +33,9 @@ Fiecare bloc de 512 biți este XOR-at cu partea de rată a stării interne, dup�
 Permutarea $f$ a construcției Sponge este aplicată după fiecare absorbție a unui bloc.
 Starea internă este împărțită în 16 secțiuni, fiecare formată din două cuvinte de 32 de biți, unul din partea de rată și celălalt din partea de capacitate.
 Ulterior, cele două sisteme haotice sunt aplicate secvențial pe fiecare secțiune de 20 de ori.
-După ce toate secțiunle au fost procesate, o etapă de difuzie amestecă secțiunile între ele.
+După ce toate secțiunile au fost procesate, o etapă de difuzie amestecă secțiunile între ele.
 Astfel, mai întâi se amestecă cuvintele vecine din fiecare jumătate, apoi se amestecă cele două jumătăți între ele.
-Amestecarea se realizează prin rotații de biți și XOR-are, pentru asigura propagarea schimbărilor în întreaga stare internă.
+Amestecarea se realizează prin rotații de biți și XOR-are, pentru a asigura propagarea schimbărilor în întreaga stare internă.
 
 \begin{algorithm}[!hbpt]
 \caption{Permutarea stării}
@@ -91,8 +91,8 @@ Amestecarea se realizează prin rotații de biți și XOR-are, pentru asigura pr
 
 \subsection{Construirea arborelui Merkle}
 Construcția Sponge și algoritmul descris anterior sunt utilizate în cadrul arborelui Merkle.
-Dacă nodul curent este o frunză, atunci datele absorbite sunt blocurile $B_i$ ale mesajului preprocesat $M'$.
-Dacă nodul curent este un nod intern, atunci datele absorbite sunt concatenarea ratelor de la toții copii nodului curent.
+Dacă nodul curent este o frunză, atunci datele absorbite sunt reprezentate de blocurile $B_i$ ale mesajului preprocesat $M'$.
+Dacă nodul curent este un nod intern, atunci datele absorbite sunt formate prin concatenarea ratelor de la toții copiii nodului curent.
 Trebuie menționat faptul că numărul maxim de copii ai unui nod intern este configurabil.
 La finalul procesului, rădăcina arborelui Merkle conține hash-ul întregului mesaj.
 Înainte de faza de stoarcere a hash-ului din construcția Sponge, se aplică un număr de runde intermediare, unde nu este absorbit niciun bloc de date.

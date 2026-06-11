@@ -3,14 +3,14 @@
 \subsection{Funcția hash}
 
 O funcție hash criptografică este o transformare deterministă $h \colon \{0,1\}^* \to \{0,1\}^n$ care asociază datelor de intrare de lungime arbitrară un hash de lungime fixă $n$.
-Pentru a fi utilă în context criptografic, ea trebuie să fie eficientă din punct de veder computațional și să satisfacă trei proprietăți de securitate ~\cite{merkle1989, damgard1989}: 
+Pentru a fi utilă în context criptografic, ea trebuie să fie eficientă din punct de vedere computațional și să satisfacă trei proprietăți de securitate ~\cite{merkle1989, damgard1989}: 
 \begin{enumerate}
-    \item Rezistența la preimagine: dat fiind un hash $y$, este infezabil să se găsească un mesaj $m$ cu $h(m) = y$.
-    \item Rezistența la a doua preimagine: dat un mesaj $m$, este infezabil să se găsească $m' \neq m$ cu $h(m') = h(m)$.
-    \item Rezistența la coliziuni: este infezabil să se găsească orice pereche $m \neq m'$ cu $h(m) = h(m')$.
+    \item Rezistența la preimagine: dat fiind un hash $y$, este nefezabil să se găsească un mesaj $m$ cu $h(m) = y$.
+    \item Rezistența la a doua preimagine: dat un mesaj $m$, este nefezabil să se găsească $m' \neq m$ cu $h(m') = h(m)$.
+    \item Rezistența la coliziuni: este nefezabil să se găsească orice pereche $m \neq m'$ cu $h(m) = h(m')$.
 \end{enumerate}
 
-\subsection{Sistemul dinamice}
+\subsection{Sistemul dinamic}
 
 Un sistem dinamic discret este un triplet $(T, X, f)$, unde:
 \begin{enumerate}

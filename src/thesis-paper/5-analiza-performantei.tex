@@ -1,7 +1,7 @@
 \section{Analiza performanței}
 
 În această secțiune, vom analiza performanța funcției hash propuse.
-Criteriile de analiză for vi multiple, și vor include și comparația cu alte funcții propuse.
+Criteriile de analiză vor fi multiple, și va fi inclusă și comparația cu alte funcții propuse.
 Intenția este aceea de a demonstra că funcția hash propusă îndeplinește toate proprietățile de securitate necesare.
 Mai mult de atât, vom arăta că funcția hash propusă este și eficientă din punct de vedere computațional spre deosebire de alte funcții hash similare.
 Pentru a putea efectua o comparație corectă, am ales următorii parameterii pentru testare:
@@ -158,21 +158,21 @@ Deoarece o funcție hash comprimă mesaje de lungime arbitrară într-o valoare 
 Conform principiului cutiei lui Dirichlet, existența coliziunilor este, prin urmare, inevitabilă.
 Rezistența la coliziuni nu înseamnă că funcția hash nu are coliziuni, ci doar că acestea sunt practic imposibil de găsit.
 Pornind de la paradoxul zilei de naștere, se poate demonstra că, pentru o funcție hash de $l$ biți, sunt necesare aproximativ $2^{l/2}$ operații de calcul al hash-ului pentru a găsi o coliziune.
-Pentru ca un astfel de atac să rămână infezabil în practică, lungimea valorii hash trebuie să fie suficient de mare.
+Pentru ca un astfel de atac să rămână nefezabil în practică, lungimea valorii hash trebuie să fie suficient de mare.
 De aceea, în cazul de față am ales $l=128$ biți, ceea ce ridică dificultatea atacului la ordinul a $2^{64}$ operații.
 Relevanța acestei cerințe este subliniată de rezultatele relativ recente de criptanaliză, care au demonstrat vulnerabilități în funcții hash consacrate, precum MD5 și SHA-1.
 Întrucât funcțiile hash bazate pe sisteme dinamice haotice operează cu numere reale, o demonstrație matematică riguroasă a rezistenței la coliziuni este dificil de realizat. \\
 
-Modalitatea de evaluare a rezistenței la coliziuni hash următoarea: se generează un set de $N$ mesaje aleatorii, de lungime aleatoare.
+Modalitatea de evaluare a rezistenței la coliziuni hash este următoarea: se generează un set de $N$ mesaje aleatorii, de lungime aleatoare.
 Pentru fiecare mesaj $M$ se calculează hash-ul, se schimbă un bit ales arbitrar din mesajul inițial obținându-se $M'$.
-Se calculează hash-ul si pentru mesajul modificat și se calculează numărul de bytes egali între cele două hash-uri.
+Se calculează hash-ul și pentru mesajul modificat și se calculează numărul de bytes egali între cele două hash-uri.
 În plus, se calculează și suma diferențelor absolute a bytes-ilor celor două hash-uri după formula:
 
 \begin{equation}
     D_i = \sum_{j=1}^{l/8} \abs{Dec(h(M)_j) - Dec(h(M_i)_j)}
 \end{equation}
 
-Considerăm că $Dec(x)$ este conversia din byte în formă zecimală, iar $h(M)_j$ reprezintă $j$-lea byte al hash-ului pentru mesajul $M$.
+Considerăm că $Dec(x)$ este conversia din byte în formă zecimală, iar $h(M)_j$ reprezintă al $j$-lea byte al hash-ului pentru mesajul $M$.
 Astfel, este calculată suma minimă, suma maximă, media sumelor și media sumelor raportată la numărul de bytes al hash-ului.
 
 \newpage
@@ -489,6 +489,6 @@ Funcțiile hash care nu raportează o viteză de procesare comparabilă nu au fo
 \end{table}
 
 Se observă că funcția hash propusă atinge viteze de procesare semnificativ mai mari decât cele raportate de funcțiile hash din literatura de specialitate.
-Trebuie menționat însă, că funcția hash a fost testată pe sisteme hardware moderne, iar că discrepanța de performanță poate fi influențată și de hardware-ul utilizat.
+Trebuie menționat însă, că funcția hash a fost testată pe sisteme hardware moderne, iar discrepanța de performanță poate fi influențată și de hardware-ul utilizat.
 În plus, proprietățile de confuzie și difuzie, rezistența la coliziuni și distribuția valorilor hash a funcției propuse sunt comparabile sau chiar superioare celor raportate de alte funcții hash bazate pe sisteme dinamice haotice.
 Astfel, putem afirma ca funcția hash propusă constituie un instrument criptografic robust și eficient, utilizabil la nivel de industrie.

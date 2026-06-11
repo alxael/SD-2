@@ -9,7 +9,7 @@ Autentificarea asigură veridicitatea identității iar integritatea datelor gar
 În acest context, se remarcă funcțiile hash, un instrument criptografic cu aplicații variate.
 Însăși definiția funcției hash demonstrează caracterul versatil al utilității sale: transformă un șir de lungime arbitrară într-un șir de lungime fixă.
 Unidirecționalitatea funcției hash determină practicalitatea acesteia.
-Începând sfărșitul celui de-al doilea mileniu, numeroase structuri de funcții hash au fost propuse și analizate.
+Începând cu sfârșitul celui de-al doilea mileniu, numeroase structuri de funcții hash au fost propuse și analizate.
 Prima generație de funcții hash moderne a fost reprezentată de MD5~\cite{rivest1992md5}, bazată pe construcția Merkle-Damgård~\cite{merkle1989,damgard1989}.
 Vulnerabilitățile acestei funcții la atacurile cu preimagine sau extinderea lungimii mesajului au devenit rapid evidente.
 În consecință, au urmat două alte iterații menite să adreseze problemele MD5: SHA-1~\cite{nist1995sha1} și SHA-2~\cite{nist2015sha2}.
@@ -20,7 +20,7 @@ Construcția s-a dovedit vulnerabilă la o multitidudine de atacuri, inclusiv ce
 Având în vedere acest context, apariția SHA-3 a fost inevitabilă.
 Structura SHA-3 se îndepărtează de structura definită de Merkle și Damgård, și adoptă construcția sponge~\cite{bertoni2007sponge}. \\
 
-În procesul de confuzie și difuzie caracteristic funcțiilor hash~\cite{shannon1949}, se remarcă numeroase de structuri și construcții.
+În procesul de confuzie și difuzie caracteristic funcțiilor hash~\cite{shannon1949}, se remarcă numeroase structuri și construcții.
 Majoritatea funcțiilor hash moderne se bazează pe substituții, transpoziții, permutări și operații aritmetice.
 Aceste metode sunt eficiente, însă proprietățile lor criptografice nu sunt garantate de un model matematic unitar.
 Mularea pe o serie de criterii statistice, fără a exista o garanție structurală produce un efect de avalanșă incert, întrucât implică o serie de ipoteze și presupuneri care, în eventualitatea unei vulnerabilități, pot fi invalidate sau propagate la dependenți.
@@ -38,7 +38,7 @@ Ce diferențiază această funcție hash de cele existente este structura optimi
 Folosindu-se de arbori Merkle și de construcția sponge, această funcție hash are o performanță superioară în comparație cu alte funcții similare.
 Valorificând sistemele hardware moderne multicore, această funcție are o viteză de procesare care o face utilizabilă în scenarii de producție. \\
 
-În continuare, în Capitolul 2 vor fi prezentate sistemele haotice utilizate în această lucrare.
+În continuare, în capitolul 2 vor fi prezentate sistemele haotice utilizate în această lucrare.
 Capitolul 3 va include o descriere exhaustivă a arhitecturii funcției hash propuse, împreună cu o implementare în pseudocod a funcției.
-În capitolul 4 va fi prezentată atât analiza criptografica a funcției hash, cât și analiza performanței acesteia, mai ales în comparație cu alte funcții hash similare.
+În capitolul 4 va fi prezentată atât analiza criptografică a funcției hash, cât și analiza performanței acesteia, mai ales în comparație cu alte funcții hash similare.
 În final, în capitolul 5 vor fi prezentate concluziile și viitoare direcții de dezvoltare.
