@@ -12,13 +12,13 @@ Unidirecționalitatea funcției hash determină practicalitatea acesteia.
 Începând cu sfârșitul celui de-al doilea mileniu, numeroase structuri de funcții hash au fost propuse și analizate.
 Prima generație de funcții hash moderne a fost reprezentată de MD5~\cite{rivest1992md5}, bazată pe construcția Merkle-Damgård~\cite{merkle1989,damgard1989}.
 Vulnerabilitățile acestei funcții la atacurile cu preimagine sau extinderea lungimii mesajului au devenit rapid evidente.
-În consecință, au urmat două alte iterații menite să adreseze problemele MD5: SHA-1~\cite{nist1995sha1} și SHA-2~\cite{nist2015sha2}.
+În consecință, au urmat două alte iterații menite să adreseze aceste neajunsuri: SHA-1~\cite{nist1995sha1} și SHA-2~\cite{nist2015sha2}.
 SHA-1 a fost ulterior compromisă, dar SHA-2 rămâne în continuare standardul la nivel de industrie.
 În ciuda adoptării generalizate, SHA-2 este fundamentată pe aceeași construcție Merkele-Damgård.
 Defectele structurale ale acestei construcții au fost relevate de timp.
 Construcția s-a dovedit vulnerabilă la o multitidudine de atacuri, inclusiv cele cu preimagine și extinderea lungimii mesajului.
 Având în vedere acest context, apariția SHA-3 a fost inevitabilă.
-Structura SHA-3 se îndepărtează de structura definită de Merkle și Damgård, și adoptă construcția sponge~\cite{bertoni2007sponge}. \\
+Structura SHA-3 se îndepărtează de structura definită de Merkle și Damgård, și adoptă construcția Sponge~\cite{bertoni2007sponge}. \\
 
 În procesul de confuzie și difuzie caracteristic funcțiilor hash~\cite{shannon1949}, se remarcă numeroase structuri și construcții.
 Majoritatea funcțiilor hash moderne se bazează pe substituții, transpoziții, permutări și operații aritmetice.
@@ -35,10 +35,11 @@ Absența unei structuri algebrice exploatabile, asociată de regulă cu vulnerab
 Având în vedere aceste considerente, lucrarea de față propune o nouă funcție hash bazată pe sisteme dinamice discrete haotice.
 Securitatea acestei funcții hash se bazează pe proprietățile sistemelor haotice îmbinate cu tehnicile clasice de confuzie și difuzie.
 Ce diferențiază această funcție hash de cele existente este structura optimizată pentru procesare paralelă.
-Folosindu-se de arbori Merkle și de construcția sponge, această funcție hash are o performanță superioară în comparație cu alte funcții similare.
+Folosindu-se de arbori Merkle și de construcția Sponge, această funcție hash are o performanță superioară în comparație cu alte funcții similare.
 Valorificând sistemele hardware moderne multicore, această funcție are o viteză de procesare care o face utilizabilă în scenarii de producție. \\
 
-În continuare, în capitolul 2 vor fi prezentate sistemele haotice utilizate în această lucrare.
-Capitolul 3 va include o descriere exhaustivă a arhitecturii funcției hash propuse, împreună cu o implementare în pseudocod a funcției.
-În capitolul 4 va fi prezentată atât analiza criptografică a funcției hash, cât și analiza performanței acesteia, mai ales în comparație cu alte funcții hash similare.
-În final, în capitolul 5 vor fi prezentate concluziile și viitoare direcții de dezvoltare.
+În continuare, în capitolul 2 va fi prezentată o serie de definiții și concepte preliminarii.
+În capitolul 3 vor fi prezentate sistemele haotice utilizate în această lucrare și suprapunerea acestora.
+Capitolul 4 va include o descriere completă a arhitecturii funcției hash propuse, împreună cu o implementare în pseudocod a funcției.
+În capitolul 5 va fi prezentată atât analiza criptografică a funcției hash, cât și analiza performanței acesteia, mai ales în comparație cu alte funcții hash similare.
+În final, în capitolul 6 vor fi prezentate concluziile și viitoare direcții de dezvoltare.

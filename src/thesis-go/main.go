@@ -15,9 +15,9 @@ func main() {
 
 	runtime.GOMAXPROCS(maxCores)
 
-	// speed tests
-	generateSpeedReport(outputSize)
-	fmt.Println("Generated speed tests!")
+	// // speed tests
+	// generateSpeedReport(outputSize)
+	// fmt.Println("Generated speed tests!")
 
 	// sensitivity tests
 	generateSensitivityTests(outputSize)
@@ -51,6 +51,10 @@ func main() {
 	generateChangedBitsDistributionTest(outputSize)
 	fmt.Println("Generated changed bits distribution test!")
 
+	// lyapunov exponents of the baker and gingerbreadman maps
+	generateChaoticMapsTest()
+	fmt.Println("Generated chaotic maps Lyapunov test!")
+
 	// graphs
 	generateSensitivityGraph()
 	fmt.Println("Generated sensitivity graph!")
@@ -72,4 +76,7 @@ func main() {
 
 	generateSpeedGraph()
 	fmt.Println("Generated speed graph!")
+
+	generateChaoticMapsGraphs()
+	fmt.Println("Generated chaotic maps graphs!")
 }

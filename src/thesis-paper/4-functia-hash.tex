@@ -3,7 +3,7 @@
 Funcția hash propusă în această lucrare se bazează pe toate conceptele prezentate în secțiunile anterioare.
 Structura Sponge este aplicată pe blocuri, iar apoi prin intermediul arborelui Merkle se obține hash-ul întregului mesaj.
 Dimensiunea stării interne este de 1024 biți, împărțită în 512 biți pentru rată și 512 biți de capacitate.
-Transformarea internă a stării este realizată printr-o secțiune haotică, completată de metode clasice de confuzie și difuzie. 
+Transformarea internă a stării este realizată printr-o funcție haotică, completată de metode clasice de confuzie și difuzie. 
 Pentru fragmentele următoare de pseudocod, considerăm următoarele convenții de notație:
 \begin{itemize}
     \item $S$ reprezintă starea internă, formată din 32 de cuvinte de 32 de biți, $S_i$ fiind cuvântul de pe poziția $i$.
@@ -29,7 +29,7 @@ Trebuie menționat faptul că dimensiunea unui bloc este un parametru configurab
 
 \subsection{Construcția Sponge}
 Construcția Sponge este aplicată pe fiecare bloc $B_i$ pentru a genera hash-ul.
-Fiecare bloc de 512 biți este XOR-at cu partea de rată a stării interne, după care se aplică permutarea haotică.
+Fiecare bloc de 512 biți este XOR-at cu partea de rată a stării interne, după care se aplică funcția haotică.
 Permutarea $f$ a construcției Sponge este aplicată după fiecare absorbție a unui bloc.
 Starea internă este împărțită în 16 secțiuni, fiecare formată din două cuvinte de 32 de biți, unul din partea de rată și celălalt din partea de capacitate.
 Ulterior, cele două sisteme haotice sunt aplicate secvențial pe fiecare secțiune de 20 de ori.
@@ -46,7 +46,7 @@ Amestecarea se realizează prin rotații de biți și XOR-are, pentru a asigura 
     $x \gets S_i$\;
     $y \gets S_{i+16}$\;
     \For{$r \gets 1$ \KwTo $20$}{
-        \tcp{harta brutarului}
+        \tcp{baker's map}
         \eIf{$x < 2^{31}$}{
             $x \gets x \ll 1$\;
             $y \gets y \gg 1$\;
@@ -54,7 +54,7 @@ Amestecarea se realizează prin rotații de biți și XOR-are, pentru a asigura 
             $x \gets (\lnot x) \ll 1$\;
             $y \gets ((\lnot y) \gg 1) \lor 2^{31}$\;
         }
-        \tcp{harta omului din turtă dulce}
+        \tcp{gingerbreadman map}
         \eIf{$x \geq 2^{31}$}{
             $a \gets -x$\;
         }{
