@@ -401,3 +401,196 @@ func writeChaoticMapResults(reportName string, results []lyapunovResult) {
 		})
 	}
 }
+
+// convergencePoint stores the running Lyapunov estimate after a given number of
+// Benettin iterations.
+type convergencePoint struct {
+	step    int
+	lambda1 float64
+	lambda2 float64
+}
+
+// logSpacedSteps returns step indices spread evenly on a logarithmic axis (a
+// fixed number of samples per decade), always including 1 and maxStep. These
+// are the iteration counts at which the running Lyapunov estimate is recorded.
+func logSpacedSteps(maxStep, perDecade int) []int {
+	factor := math.Pow(10, 1.0/float64(perDecade))
+	seen := make(map[int]bool)
+	var steps []int
+	value := 1.0
+	for {
+		s := int(math.Round(value))
+		if s > maxStep {
+			break
+		}
+		if !seen[s] {
+			seen[s] = true
+			steps = append(steps, s)
+		}
+		value *= factor
+	}
+	if !seen[maxStep] {
+		steps = append(steps, maxStep)
+	}
+	return steps
+}
+
+// traceBakerConvergence runs the Benettin algorithm on the baker's map from a
+// fixed initial condition and records the running estimate of both Lyapunov
+// exponents as the iteration count grows. The two tangent vectors are seeded in
+// a generic (non eigen-aligned) direction so the estimate visibly converges to
+// the theoretical limits +ln 2 and -ln 2 as Gram-Schmidt aligns them with the
+// stretching and contracting eigendirections.
+func traceBakerConvergence(x0, y0 float64, maxStep, perDecade int) []convergencePoint {
+	m := chaoticMap{
+		name:     "baker",
+		step:     bakerStep,
+		jacobian: bakerJacobian,
+	}
+
+	x, y := x0, y0
+
+	// Generic orthonormal tangent frame (not aligned with the axes).
+	v1 := [2]float64{2, 1}
+	n := norm2(v1)
+	v1[0] /= n
+	v1[1] /= n
+	v2 := [2]float64{-v1[1], v1[0]}
+
+	recordSteps := logSpacedSteps(maxStep, perDecade)
+	recordIndex := 0
+
+	var sum1, sum2 float64
+	trace := make([]convergencePoint, 0, len(recordSteps))
+
+	for i := 1; i <= maxStep; i++ {
+		j := m.jacobian(x, y)
+
+		v1 = matVec2(j, v1)
+		n1 := norm2(v1)
+		v1[0] /= n1
+		v1[1] /= n1
+
+		v2 = matVec2(j, v2)
+		proj := dot2(v2, v1)
+		v2[0] -= proj * v1[0]
+		v2[1] -= proj * v1[1]
+		n2 := norm2(v2)
+		v2[0] /= n2
+		v2[1] /= n2
+
+		sum1 += math.Log(n1)
+		sum2 += math.Log(n2)
+
+		x, y = m.step(x, y)
+
+		if recordIndex < len(recordSteps) && i == recordSteps[recordIndex] {
+			trace = append(trace, convergencePoint{
+				step:    i,
+				lambda1: sum1 / float64(i),
+				lambda2: sum2 / float64(i),
+			})
+			recordIndex++
+		}
+	}
+
+	return trace
+}
+
+// traceHashConvergence runs the Benettin algorithm on the composed
+// baker -> gingerbreadman round used by hash.go and records the running estimate
+// of both Lyapunov exponents as the iteration count grows. The trajectory is
+// advanced in exact uint32 arithmetic after discarding a transient so the
+// estimate is taken on the attractor.
+func traceHashConvergence(x0, y0 uint32, transient, maxStep, perDecade int) []convergencePoint {
+	x, y := x0, y0
+
+	// Discard the transient so the estimate is taken on the attractor.
+	for i := 0; i < transient; i++ {
+		x, y, _ = hashChaosRound(x, y)
+	}
+
+	// Generic orthonormal tangent frame (not aligned with the axes).
+	v1 := [2]float64{2, 1}
+	n := norm2(v1)
+	v1[0] /= n
+	v1[1] /= n
+	v2 := [2]float64{-v1[1], v1[0]}
+
+	recordSteps := logSpacedSteps(maxStep, perDecade)
+	recordIndex := 0
+
+	var sum1, sum2 float64
+	trace := make([]convergencePoint, 0, len(recordSteps))
+
+	for i := 1; i <= maxStep; i++ {
+		var j [2][2]float64
+		x, y, j = hashChaosRound(x, y)
+
+		v1 = matVec2(j, v1)
+		n1 := norm2(v1)
+		v1[0] /= n1
+		v1[1] /= n1
+
+		v2 = matVec2(j, v2)
+		proj := dot2(v2, v1)
+		v2[0] -= proj * v1[0]
+		v2[1] -= proj * v1[1]
+		n2 := norm2(v2)
+		v2[0] /= n2
+		v2[1] /= n2
+
+		sum1 += math.Log(n1)
+		sum2 += math.Log(n2)
+
+		if recordIndex < len(recordSteps) && i == recordSteps[recordIndex] {
+			trace = append(trace, convergencePoint{
+				step:    i,
+				lambda1: sum1 / float64(i),
+				lambda2: sum2 / float64(i),
+			})
+			recordIndex++
+		}
+	}
+
+	return trace
+}
+
+// generateChaoticMapsConvergenceTest records how the running Benettin estimate
+// of the baker's map and of the composed hash round approaches its limit.
+func generateChaoticMapsConvergenceTest() {
+	const (
+		maxStep   = 1000
+		perDecade = 40
+	)
+
+	bakerTrace := traceBakerConvergence(0.31622776601, 0.27182818284, maxStep, perDecade)
+	writeConvergenceResults("test-chaotic-maps-baker-convergence", bakerTrace)
+
+	const (
+		hashMaxStep = 1_000_000
+		transient   = 1000
+	)
+	hashTrace := traceHashConvergence(0x9e3779b9, 0x6a09e667, transient, hashMaxStep, perDecade)
+	writeConvergenceResults("test-chaotic-maps-hash-convergence", hashTrace)
+}
+
+// writeConvergenceResults stores the running Lyapunov estimate trace.
+func writeConvergenceResults(reportName string, trace []convergencePoint) {
+	writer, file, err := generateCsvReportFile(reportName)
+	if err != nil {
+		return
+	}
+	defer file.Close()
+	defer writer.Flush()
+
+	writer.Write([]string{"steps", "lambda1", "lambda2"})
+
+	for _, p := range trace {
+		writer.Write([]string{
+			strconv.Itoa(p.step),
+			strconv.FormatFloat(p.lambda1, 'f', 6, 64),
+			strconv.FormatFloat(p.lambda2, 'f', 6, 64),
+		})
+	}
+}

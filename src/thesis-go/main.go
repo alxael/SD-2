@@ -55,6 +55,10 @@ func main() {
 	generateChaoticMapsTest()
 	fmt.Println("Generated chaotic maps Lyapunov test!")
 
+	// convergence of the baker's map Lyapunov estimate to +/- ln 2
+	generateChaoticMapsConvergenceTest()
+	fmt.Println("Generated chaotic maps convergence test!")
+
 	// graphs
 	generateSensitivityGraph()
 	fmt.Println("Generated sensitivity graph!")
@@ -79,4 +83,7 @@ func main() {
 
 	generateChaoticMapsGraphs()
 	fmt.Println("Generated chaotic maps graphs!")
+
+	generateChaoticMapsConvergenceGraph()
+	fmt.Println("Generated chaotic maps convergence graph!")
 }
