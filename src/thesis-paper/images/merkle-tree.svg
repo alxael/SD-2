@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="560" viewBox="0 0 820 560" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="820" height="560" fill="#ffffff"/>
+
+  <!-- ===== edges (drawn first so nodes sit on top) ===== -->
+  <g stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <!-- leaves -> internal nodes -->
+    <path d="M120,400 L300,300"/>
+    <path d="M260,400 L320,300"/>
+    <path d="M400,400 L520,300"/>
+    <path d="M560,400 L540,300"/>
+    <path d="M700,400 L560,300"/>
+    <!-- internal nodes -> root -->
+    <path d="M330,240 L390,160"/>
+    <path d="M530,240 L430,160"/>
+  </g>
+
+  <!-- ===== root ===== -->
+  <g>
+    <rect x="330" y="90" width="160" height="64" rx="10" fill="#1f4e79" stroke="#16395a" stroke-width="2"/>
+    <text x="410" y="116" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="bold">Rădăcină</text>
+    <text x="410" y="138" text-anchor="middle" fill="#dce6f1" font-size="12">hash-ul mesajului</text>
+  </g>
+
+  <!-- ===== internal nodes ===== -->
+  <g>
+    <rect x="250" y="244" width="160" height="60" rx="10" fill="#2e75b6" stroke="#1f4e79" stroke-width="2"/>
+    <text x="330" y="279" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">Nod intern</text>
+  </g>
+  <g>
+    <rect x="450" y="244" width="160" height="60" rx="10" fill="#2e75b6" stroke="#1f4e79" stroke-width="2"/>
+    <text x="530" y="279" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">Nod intern</text>
+  </g>
+
+  <!-- ===== leaves ===== -->
+  <g font-size="13" font-weight="bold">
+    <g>
+      <rect x="60" y="404" width="120" height="54" rx="9" fill="#9dc3e6" stroke="#2e75b6" stroke-width="2"/>
+      <text x="120" y="428" text-anchor="middle" fill="#0f2740">Frunză</text>
+      <text x="120" y="447" text-anchor="middle" fill="#1f4e79" font-size="12" font-weight="normal">bloc B₁</text>
+    </g>
+    <g>
+      <rect x="200" y="404" width="120" height="54" rx="9" fill="#9dc3e6" stroke="#2e75b6" stroke-width="2"/>
+      <text x="260" y="428" text-anchor="middle" fill="#0f2740">Frunză</text>
+      <text x="260" y="447" text-anchor="middle" fill="#1f4e79" font-size="12" font-weight="normal">bloc B₂</text>
+    </g>
+    <g>
+      <rect x="340" y="404" width="120" height="54" rx="9" fill="#9dc3e6" stroke="#2e75b6" stroke-width="2"/>
+      <text x="400" y="428" text-anchor="middle" fill="#0f2740">Frunză</text>
+      <text x="400" y="447" text-anchor="middle" fill="#1f4e79" font-size="12" font-weight="normal">bloc B₃</text>
+    </g>
+    <g>
+      <rect x="500" y="404" width="120" height="54" rx="9" fill="#9dc3e6" stroke="#2e75b6" stroke-width="2"/>
+      <text x="560" y="428" text-anchor="middle" fill="#0f2740">Frunză</text>
+      <text x="560" y="447" text-anchor="middle" fill="#1f4e79" font-size="12" font-weight="normal">bloc B₄</text>
+    </g>
+    <g>
+      <rect x="640" y="404" width="120" height="54" rx="9" fill="#9dc3e6" stroke="#2e75b6" stroke-width="2"/>
+      <text x="700" y="428" text-anchor="middle" fill="#0f2740">Frunză</text>
+      <text x="700" y="447" text-anchor="middle" fill="#1f4e79" font-size="12" font-weight="normal">bloc B₅</text>
+    </g>
+  </g>
+
+  <!-- ===== preprocessed message strip ===== -->
+  <g>
+    <text x="410" y="500" text-anchor="middle" fill="#333" font-size="13" font-weight="bold">Mesaj preprocesat M&#8242;</text>
+    <g stroke="#888" stroke-width="1.5">
+      <rect x="160" y="510" width="100" height="30" fill="#f2f2f2"/>
+      <rect x="260" y="510" width="100" height="30" fill="#f2f2f2"/>
+      <rect x="360" y="510" width="100" height="30" fill="#f2f2f2"/>
+      <rect x="460" y="510" width="100" height="30" fill="#f2f2f2"/>
+      <rect x="560" y="510" width="100" height="30" fill="#f2f2f2"/>
+    </g>
+    <g font-size="12" fill="#555" text-anchor="middle">
+      <text x="210" y="530">B₁</text>
+      <text x="310" y="530">B₂</text>
+      <text x="410" y="530">B₃</text>
+      <text x="510" y="530">B₄</text>
+      <text x="610" y="530">B₅</text>
+    </g>
+  </g>
+  <g stroke="#bbb" stroke-width="1.5" stroke-dasharray="4 3" fill="none">
+    <path d="M120,458 L205,510"/>
+    <path d="M260,458 L305,510"/>
+    <path d="M400,458 L405,510"/>
+    <path d="M560,458 L505,510"/>
+    <path d="M700,458 L605,510"/>
+  </g>
+
+</svg>
